@@ -1,10 +1,7 @@
-#include <iostream>
-#include <vector>
-#include "invManage.h"
+#include "inventoryManagement.h"
 
 int main() {
-  invManage obj1;
-  std::cout << "Test\n";
-  std::vector<int> myVec {1,2,3,4};
+  invManage o1;
+  o1.userOptionMenu();
   return 0;
 }
