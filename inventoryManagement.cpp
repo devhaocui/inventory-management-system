@@ -9,16 +9,37 @@ bool invManage::isNumber(std::string item) {
 }
 void invManage::addItem (std::string iName, std::string iCategory, int iQuantity) {
   //TODO: Check if the item already exists, if so then add the quantity amount to that item.
-  //1. we can use an <unordered_map> to grab all the items. 
-  //2. we check if the item is in the map as we add more items into the map.
+  //NOTE: I only care about if iName exists and iQuantity.
+  std::vector<std::string> vec1;
+  std::fstream myFile;
+  myFile.open("item.csv", std::ios::in);
+  std::string line;
+  
+  //putting the entire item.csv file into the vec1
+  while (getline (myFile, line, ',') ) {
+    vec1.push_back(line);
+  }
+  myFile.close();
 
-  std::unordered_map<std::string, int> myMap;
+  bool isItemAdded = false;
+  for (size_t i{0} ; i < vec1.size(); i++) {
+    if (iName == vec1[i]) {
+      isItemAdded = true;
+      vec1[i + 2] = std::to_string(std::stoi(vec1[i + 2]) + iQuantity);
+      myFile.open("item.csv", std::ios::out);
+      for (size_t i{0}; i < vec1.size(); i++) {
+        std::cout << "inserting " << vec1[i] << " into myFile\n";
+        myFile << vec1[i] << ",";
+      }
+      myFile.close();
+    }
 
-  std::cout << "iName -> " << iName << "\tiCategory -> " << iCategory << "\tiQuantity -> " << iQuantity;
-  std::fstream inFile;
-  inFile.open("item.csv", std::ios::app);
-  inFile << iName << "," << iCategory << "," << iQuantity << std::endl;
-  inFile.close();
+  }
+  if (!isItemAdded || vec1.empty()) {
+    myFile.open("item.csv", std::ios::app);
+    myFile << iName << "," << iCategory << "," << iQuantity << ",";
+    myFile.close();
+  }
 }
 
 void invManage::userOptionMenu() {
