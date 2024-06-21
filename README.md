@@ -3,6 +3,11 @@ This is a development of a inventory management system that tracks lists of item
 Typically designed for store clerks or store managers to update their current existing stocks or add extra items to a new category.
 The core of the codebase will be build based on C++.
 
+HOW TO USE THE PROGRAM:
+1. clone the repo using ``git clone https://github.com/devhaocui/inventory-management-system.git``
+2. run the run.sh file using ``sh run.sh``
+3. enjoy :).
+
 DESIRED OUTCOME:
 1. Create a working inventory management system with C++ that stores item data locally using a .csv file.
 2. Create a user registeration and login feature using basic hashing algorithm to validate each user.
