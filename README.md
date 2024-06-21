@@ -9,15 +9,15 @@ The core of the codebase will be build based on C++.
 3. enjoy :).
 
 ### Desired Outcomes
-1. Create a working inventory management system with C++ that stores item data locally using a .csv file.
-2. Create a user registeration and login feature using basic hashing algorithm to validate each user.
-3. Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
-4. Modify the local storage .csv files into SQLite and integrate it into an actual database.
+- [ ] Create a working inventory management system with C++ that stores item data locally using a .csv file.
+- [ ] Create a user registeration and login feature using basic hashing algorithm to validate each user.
+- [ ] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
+- [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
 ### What the program currently does
-1. add an item and automatically saves into the item.csv file from the terminal command prompts. If an item already exists in the file it will only add the quantity specified into the existing quantity.
+- [x] add an item and automatically saves into the item.csv file from the terminal command prompts. If an item already exists in the file it will only add the quantity specified into the existing quantity.
 
 ### Next Priorities
-1. remove an existing item in item.csv file (if found).
-2. print all items in the inventory.
-3. print items based on a specific category.
+- [ ] remove an existing item in item.csv file (if found).
+- [ ] print all items in the inventory.
+- [ ] print items based on a specific category.
