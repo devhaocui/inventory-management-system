@@ -15,9 +15,10 @@ The core of the codebase will be build based on C++.
 - [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
 ### What the program currently does
-- [x] add an item and automatically saves into the item.csv file from the terminal command prompts. If an item already exists in the file it will only add the quantity specified into the existing quantity.
+- [x] add an item and automatically saves into the ``item.csv`` file from the terminal command prompts. If an item already exists in the file it will only add the quantity specified into the existing quantity.
+- [x] removes an item from the ``item.csv`` database. If the item does not currently exists it will say so. Note it currently only checks every 3rd element in ``item.csv`` (where every item name resides). If the item name is found it will delete the current index itemName resides + 2 positions after that (which are the category and quantity of that item).
 
 ### Next Priorities
-- [ ] remove an existing item in item.csv file (if found).
+- [ ] remove an existing item in ``item.csv`` file (if found).
 - [ ] print all items in the inventory.
 - [ ] print items based on a specific category.
