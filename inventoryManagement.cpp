@@ -15,7 +15,7 @@ void invManage::addItem (std::string iName, std::string iCategory, int iQuantity
   std::string line;
   
   //putting the entire item.csv file into the vec1
-  while (getline (myFile, line, ',') ) {
+  while (getline(myFile, line, ',')){
     vec1.push_back(line);
   }
   myFile.close();
@@ -25,7 +25,8 @@ void invManage::addItem (std::string iName, std::string iCategory, int iQuantity
     if (iName == vec1[i]) {
       isItemAdded = true;
       vec1[i + 2] = std::to_string(std::stoi(vec1[i + 2]) + iQuantity);
-      std::cout << iName << " already exist in the list. Adding (" << stoi(vec1[i+2]) << " + " << iQuantity << ")\n";
+      std::cout << iName << " already exists in the database. Adding (" << iQuantity << ") " << iName 
+                << " more into the database.\nThere are now (" << vec1[i + 2] << ") "<< iName << " in the store.\n";
       break;
     }
   }
@@ -38,7 +39,6 @@ void invManage::addItem (std::string iName, std::string iCategory, int iQuantity
 
   myFile.open("item.csv", std::ios::out);
   for (size_t i{0}; i < vec1.size(); i++) {
-    //std::cout << "inserting -> " << vec1[i] << "\n"; // for testing if it is inserting empty spaces
     myFile << vec1[i];
     if (i < vec1.size() - 1)
       myFile << ",";
@@ -50,19 +50,15 @@ void invManage::deleteItem (std::string iName) {
   bool itemDeleted = false;
   std::vector<std::string> vec1;
   std::fstream myFile;
-  myFile.open("item.csv", std::ios::in);
   std::string line;
-  
+  myFile.open("item.csv", std::ios::in);
   //putting the entire item.csv file into the vec1
-  while (getline (myFile, line, ',') ) {
+  while (getline(myFile, line, ',')){
     vec1.push_back(line);
   }
   myFile.close();
 
-  // if iName is found, delete the current values related to iName.
-  // which are vec1[i], vec1[i+1], vec1[i+2]
-  // Then put it back into the list
-  for (size_t i{0} ; i < vec1.size(); i += 3) { // note: i+=3 means this skips the iCategory and iQuantity in the item.csv
+  for (size_t i{0} ; i < vec1.size(); i += 3) {
     if (iName == vec1[i]) {
       itemDeleted = true;
       std::cout << "Deleted (" << iName << ") from the database.\n";
@@ -77,10 +73,39 @@ void invManage::deleteItem (std::string iName) {
     }
   }
   if (!itemDeleted)
-    std::cout << "The item you wish to delete does not exist in the databse!\n";
+    std::cout << "[Failed] attempt at deleting an item that does not exist in item!\n";
 }
-void invManage::withdrawItem (std::string iName) {
 
+void invManage::withdrawItem (std::string iName, int withdrawAmount) {
+  std::vector<std::string> vec1;
+  std::string line;
+  std::fstream myFile;
+  myFile.open("item.csv", std::ios::in);
+  while (getline(myFile, line, ','))
+    vec1.push_back(line);
+  myFile.close();
+ 
+  for (size_t i{0}; i < vec1.size(); i += 3) {
+    if (iName == vec1[i]) {
+      if (std::stoi(vec1[i + 2]) - withdrawAmount < 0) {
+        std::cout << "Withdrew [Failed]. You tried to withdraw (" << withdrawAmount << ") " << iName << " from the store.\n";
+        std::cout << "There's (" << vec1[i + 2] << ") " << iName << " left in the store.";
+      }
+      else {
+        std::cout << "Withdrawing (" << withdrawAmount << ") " << iName << " from the store\n";
+        vec1[i + 2] = std::to_string(std::stoi(vec1[i + 2]) - withdrawAmount);
+        std::cout << "You have (" << vec1[i + 2] << ") " << iName << " left in the store.\n";
+        myFile.open("item.csv", std::ios::out);
+        for (size_t i{0}; i < vec1.size(); i++) {
+          myFile << vec1[i];
+          if (i < vec1.size() - i)
+            myFile << ",";
+        }
+        myFile.close();
+        break;
+      }
+    }
+  }
 }
 
 void invManage::userOptionMenu() {
@@ -91,6 +116,7 @@ void invManage::userOptionMenu() {
   std::cout << "Option 2: \n";
   std::cout << "Option 3: Add An Item \n";
   std::cout << "Option 4: Delete An Item\n";
+  std::cout << "Option 5: Withdraw An Item\n";
 
   std::cout << "Choose your option\n";
   std::cin >> userInput;
@@ -114,10 +140,18 @@ void invManage::userOptionMenu() {
       addItem(itemName, itemCategory, itemQuantity);
       break;
     }
-    case 4:
+    case 4: {
       std::cout << "Input (1)ItemName to be deleted from the list\n";
       std::cin >> itemName;
       deleteItem(itemName);
       break;
+    }
+
+    case 5: {
+      std::cout << "Input (1)ItemName (2)ItemQuantity to withdraw\n";
+      std::cin >> itemName >> itemQuantity;
+      withdrawItem(itemName, itemQuantity);
+      break;
+    }
   }
 }

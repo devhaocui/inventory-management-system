@@ -17,7 +17,7 @@ public:
   void userOptionMenu();
   void addItem (std::string iName, std::string iCategory, int iQuantity);
   void deleteItem (std::string);
-  void withdrawItem (std::string);
+  void withdrawItem (std::string, int);
   bool categoryExists (std::string iCategory);
   bool itemExists(std::string iName);
   void displayItem ();
