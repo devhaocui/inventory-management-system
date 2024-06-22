@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <tuple>
 #include <vector>
 
 class invManage{
@@ -14,10 +13,11 @@ private:
 public:
   //void userCreateMenu();
   //void userLoginMenu();
-  bool isNumber(std::string item);
+  //bool isNumber(std::string item);
   void userOptionMenu();
   void addItem (std::string iName, std::string iCategory, int iQuantity);
-  void deleteItem (std::string iName);
+  void deleteItem (std::string);
+  void withdrawItem (std::string);
   bool categoryExists (std::string iCategory);
   bool itemExists(std::string iName);
   void displayItem ();
