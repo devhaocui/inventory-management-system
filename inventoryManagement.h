@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <iomanip>
 
 class invManage{
 private:
@@ -15,15 +16,16 @@ public:
   //void userLoginMenu();
   //bool isNumber(std::string item);
   void userOptionMenu();
-  void addItem (std::string iName, std::string iCategory, int iQuantity);
+  void addItem (std::string, std::string, int);
   void deleteItem (std::string);
   void withdrawItem (std::string, int);
-  bool categoryExists (std::string iCategory);
-  bool itemExists(std::string iName);
-  void displayItem ();
-  void displayByName();
-  void displayByCategory();
-  void displayByQuantity();
+  bool categoryExists (std::string);
+  bool itemExists(std::string);
+  void searchItem (std::string);
+  void display();
+  void displayByName (std::string);
+  void displayCategory (std::string);
+  void displayByQuantity ();
 };
 
 
