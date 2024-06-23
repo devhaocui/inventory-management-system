@@ -19,9 +19,11 @@ The core of the codebase will be build based on C++.
 - [x] withdrawItem() function withdraws the amount of items from ``item.csv``. Withdraw will fail if attempting to overdraft.
 - [x] display() function to display all the items in the order they are originally added into the ``item.csv`` file.
 - [x] displayCategory() print items based on specified category.
+- [x] userCreate() creates a username and password using bcrypt slow hashing algorithm.
+
 ### Next Priorities
-- [ ] print items based on itemName alphabetically.
-- [ ] print only a specific category of items.
-- [ ] search function to find singular item based on itemName.
-- [ ] implementation of agorn2's slow hashing algorithm function to generate secure password methods.
+- [ ] print items based on itemName alphabetically. (probably insert item.csv into a tuple data structure)
+- [ ] loginUser() to validate the Username and Password.
+- [ ] mainMenu() to ask to be taken to (1) registration page (2) login page (3) forgot password page.
+- [ ] forgotPass() to allow password reset.
 - [ ] implementation of ImGUI into the project.
