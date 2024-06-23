@@ -2,6 +2,7 @@
 
 int main() {
   invManage o1;
-  o1.userOptionMenu();
+  o1.userCreateMenu();
+  //o1.userOptionMenu();
   return 0;
 }

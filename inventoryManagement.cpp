@@ -1,46 +1,81 @@
 #include "inventoryManagement.h"
 
-//bool invManage::isNumber(std::string item) {
-//  for (size_t i{0}; i < item.size(); i++) {
-//    if (!isdigit(item[i]))
-//      return false;
-//  }
-//  return true;
-//}
+std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
+  std::vector<std::string> vec;
+  std::fstream myFile;
+  std::string line;
+  myFile.open(fileName, std::ios::in);
+  while (getline(myFile, line, ','))
+    vec.push_back(line);
+  myFile.close();
+  return vec;
+}
 
+void invManage::userCreate() {
+  bool userExist = false;
+  std::cout << "Insert (1)Username (2)Password\n";
+  std::cin >> userName >> userPass;
+  std::string password = bcrypt::generateHash(userPass);
+
+  std::vector<std::string> file = readDataIntoVector("user.csv");
+  for (size_t i{0}; i < file.size(); i += 2) {
+    if (userName == file[i]) {
+      std::cout << "The username (" << userName << ") already exists!\n";
+      userExist = true;
+    }
+  }
+  if (!userExist) {
+    std::cout << "[Success] Your account has been created!\n";
+    std::cout << "Your Username is: " << userName << "\nYour Password is: " << userPass << "\n";
+    std::fstream myFile;
+    file.push_back(userName);
+    file.push_back(password);
+    for (size_t i{0} ; i < file.size(); i += 2) {
+      myFile.open("user.csv", std::ios::out);
+      for (size_t i{0}; i < file.size(); i++) {
+        myFile << file[i];
+          if (i < file.size() - 1)
+            myFile << ",";
+        }
+        myFile.close();
+      }
+    }
+  }
+  //std::cout << "correct validation " << userPass << " : " << bcrypt::validatePassword(userPass,password) << std::endl;
+  //std::cout << "wrong validation : " << bcrypt::validatePassword("666",password) << std::endl;
 void invManage::addItem (std::string iName, std::string iCategory, int iQuantity) {
-  std::vector<std::string> vec1;
+  std::vector<std::string> vec;
   std::fstream myFile;
   myFile.open("item.csv", std::ios::in);
   std::string line;
   
-  //putting the entire item.csv file into the vec1
+  //putting the entire item.csv file into the vec
   while (getline(myFile, line, ',')){
-    vec1.push_back(line);
+    vec.push_back(line);
   }
   myFile.close();
 
   bool isItemAdded = false;
-  for (size_t i{0} ; i < vec1.size(); i++) {
-    if (iName == vec1[i]) {
+  for (size_t i{0} ; i < vec.size(); i++) {
+    if (iName == vec[i]) {
       isItemAdded = true;
-      vec1[i + 2] = std::to_string(std::stoi(vec1[i + 2]) + iQuantity);
+      vec[i + 2] = std::to_string(std::stoi(vec[i + 2]) + iQuantity);
       std::cout << iName << " already exists in the database. Adding (" << iQuantity << ") " << iName 
-                << " more into the database.\nThere are now (" << vec1[i + 2] << ") "<< iName << " in the store.\n";
+                << " more into the database.\nThere are now (" << vec[i + 2] << ") "<< iName << " in the store.\n";
       break;
     }
   }
 
-  if (!isItemAdded || vec1.empty()) {
-    vec1.push_back(iName);
-    vec1.push_back(iCategory);
-    vec1.push_back(std::to_string(iQuantity));
+  if (!isItemAdded || vec.empty()) {
+    vec.push_back(iName);
+    vec.push_back(iCategory);
+    vec.push_back(std::to_string(iQuantity));
   }
 
   myFile.open("item.csv", std::ios::out);
-  for (size_t i{0}; i < vec1.size(); i++) {
-    myFile << vec1[i];
-    if (i < vec1.size() - 1)
+  for (size_t i{0}; i < vec.size(); i++) {
+    myFile << vec[i];
+    if (i < vec.size() - 1)
       myFile << ",";
   }
   myFile.close();
@@ -48,25 +83,25 @@ void invManage::addItem (std::string iName, std::string iCategory, int iQuantity
 
 void invManage::deleteItem (std::string iName) {
   bool itemDeleted = false;
-  std::vector<std::string> vec1;
+  std::vector<std::string> vec;
   std::fstream myFile;
   std::string line;
   myFile.open("item.csv", std::ios::in);
-  //putting the entire item.csv file into the vec1
+  //putting the entire item.csv file into the vec
   while (getline(myFile, line, ',')){
-    vec1.push_back(line);
+    vec.push_back(line);
   }
   myFile.close();
 
-  for (size_t i{0} ; i < vec1.size(); i += 3) {
-    if (iName == vec1[i]) {
+  for (size_t i{0} ; i < vec.size(); i += 3) {
+    if (iName == vec[i]) {
       itemDeleted = true;
       std::cout << "Deleted (" << iName << ") from the database.\n";
-      vec1.erase(vec1.begin() + i,vec1.begin() + i + 3);
+      vec.erase(vec.begin() + i,vec.begin() + i + 3);
       myFile.open("item.csv", std::ios::out);
-      for (size_t i{0}; i < vec1.size(); i++) {
-        myFile << vec1[i];
-        if (i < vec1.size() - 1)
+      for (size_t i{0}; i < vec.size(); i++) {
+        myFile << vec[i];
+        if (i < vec.size() - 1)
           myFile << ",";
       }
       myFile.close();
@@ -77,28 +112,28 @@ void invManage::deleteItem (std::string iName) {
 }
 
 void invManage::withdrawItem (std::string iName, int withdrawAmount) {
-  std::vector<std::string> vec1;
+  std::vector<std::string> vec;
   std::string line;
   std::fstream myFile;
   myFile.open("item.csv", std::ios::in);
   while (getline(myFile, line, ','))
-    vec1.push_back(line);
+    vec.push_back(line);
   myFile.close();
  
-  for (size_t i{0}; i < vec1.size(); i += 3) {
-    if (iName == vec1[i]) {
-      if (std::stoi(vec1[i + 2]) - withdrawAmount < 0) {
+  for (size_t i{0}; i < vec.size(); i += 3) {
+    if (iName == vec[i]) {
+      if (std::stoi(vec[i + 2]) - withdrawAmount < 0) {
         std::cout << "Withdrew [Failed]. You tried to withdraw (" << withdrawAmount << ") " << iName << " from the store.\n";
-        std::cout << "There's (" << vec1[i + 2] << ") " << iName << " left in the store.";
+        std::cout << "There's (" << vec[i + 2] << ") " << iName << " left in the store.";
       }
       else {
         std::cout << "Withdrawing (" << withdrawAmount << ") " << iName << " from the store\n";
-        vec1[i + 2] = std::to_string(std::stoi(vec1[i + 2]) - withdrawAmount);
-        std::cout << "You have (" << vec1[i + 2] << ") " << iName << " left in the store.\n";
+        vec[i + 2] = std::to_string(std::stoi(vec[i + 2]) - withdrawAmount);
+        std::cout << "You have (" << vec[i + 2] << ") " << iName << " left in the store.\n";
         myFile.open("item.csv", std::ios::out);
-        for (size_t i{0}; i < vec1.size(); i++) {
-          myFile << vec1[i];
-          if (i < vec1.size() - i)
+        for (size_t i{0}; i < vec.size(); i++) {
+          myFile << vec[i];
+          if (i < vec.size() - i)
             myFile << ",";
         }
         myFile.close();
@@ -178,20 +213,20 @@ void invManage::userOptionMenu() {
 void invManage::searchItem(std::string iName) {
   bool itemFound = false;
   int width = 10;
-  std::vector<std::string> vec1;
+  std::vector<std::string> vec;
   std::fstream myFile;
   myFile.open("item.csv", std::ios::in);
   std::string line;
   while (getline(myFile, line, ',')){
-    vec1.push_back(line);
+    vec.push_back(line);
   }
   myFile.close();
 
-  for (size_t i{0}; i < vec1.size(); i += 3) {
-    if (iName == vec1[i]) {
+  for (size_t i{0}; i < vec.size(); i += 3) {
+    if (iName == vec[i]) {
       itemFound = true;
       std::cout << "\n\n====Item Found====\nItemName |" << std::setw(width) << " Category |" << std::setw(width) << " Quantity\n"
-                << iName << std::setw(width+2) << vec1[i + 1] << std::setw(width+1) << vec1[i + 2] << "\n";
+                << iName << std::setw(width+2) << vec[i + 1] << std::setw(width+1) << vec[i + 2] << "\n";
     }
   }
   if (!itemFound)
@@ -199,33 +234,33 @@ void invManage::searchItem(std::string iName) {
 }
 
 void invManage::display() {
-  std::vector<std::string> vec1;
+  std::vector<std::string> vec;
   std::fstream myFile;
   myFile.open("item.csv", std::ios::in);
   std::string line;
   while (getline(myFile, line, ',')){
-    vec1.push_back(line);
+    vec.push_back(line);
   }
   myFile.close();
 
   std::cout << "Name |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
-  for (size_t i{0}; i < vec1.size(); i += 3) {
-    std::cout << vec1[i] << " | " << vec1[i+1] << " | " << vec1[i+2] << "\n";
+  for (size_t i{0}; i < vec.size(); i += 3) {
+    std::cout << vec[i] << " | " << vec[i+1] << " | " << vec[i+2] << "\n";
   }
 }
 
 void invManage::displayCategory(std::string iCategory) {
-  std::vector<std::string> vec1;
+  std::vector<std::string> vec;
   std::fstream myFile;
   myFile.open("item.csv", std::ios::in);
   std::string line;
   while (getline(myFile, line, ',')){
-    vec1.push_back(line);
+    vec.push_back(line);
   }
   myFile.close();
   std::cout << "Name |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
-  for (size_t i{0}; i < vec1.size(); i += 3) {
-    if (iCategory == vec1[i+1])
-      std::cout << vec1[i] << " | " << vec1[i+1] << " | " << vec1[i+2] << "\n";
+  for (size_t i{0}; i < vec.size(); i += 3) {
+    if (iCategory == vec[i+1])
+      std::cout << vec[i] << " | " << vec[i+1] << " | " << vec[i+2] << "\n";
   }
 }

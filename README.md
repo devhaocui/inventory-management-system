@@ -18,7 +18,7 @@ The core of the codebase will be build based on C++.
 - [x] deleteItem() function removes an item from the ``item.csv`` database.
 - [x] withdrawItem() function withdraws the amount of items from ``item.csv``. Withdraw will fail if attempting to overdraft.
 - [x] display() function to display all the items in the order they are originally added into the ``item.csv`` file.
-- [x] print items based on category.
+- [x] displayCategory() print items based on specified category.
 ### Next Priorities
 - [ ] print items based on itemName alphabetically.
 - [ ] print only a specific category of items.

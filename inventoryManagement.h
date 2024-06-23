@@ -6,15 +6,15 @@
 #include <fstream>
 #include <vector>
 #include <iomanip>
+#include "bcrypt.h"
 
 class invManage{
 private:
   std::string userName;
   std::string userPass;
 public:
-  //void userCreateMenu();
-  //void userLoginMenu();
-  //bool isNumber(std::string item);
+  void userCreate();
+  void userLogin(std::string, std::string);
   void userOptionMenu();
   void addItem (std::string, std::string, int);
   void deleteItem (std::string);
@@ -26,6 +26,8 @@ public:
   void displayByName (std::string);
   void displayCategory (std::string);
   void displayByQuantity ();
+  std::vector<std::string> readDataIntoVector(std::string);
+  void writeDataIntoVector(std::vector<std::string>);
 };
 
 
