@@ -1,4 +1,8 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
 #include "inventoryManagement.h"
+#include "bcrypt.h"
 
 std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
   std::vector<std::string> vec;
@@ -41,8 +45,23 @@ void invManage::userCreate() {
       }
     }
   }
-  //std::cout << "correct validation " << userPass << " : " << bcrypt::validatePassword(userPass,password) << std::endl;
-  //std::cout << "wrong validation : " << bcrypt::validatePassword("666",password) << std::endl;
+
+bool invManage::userValidate(std::string userName, std::string userPass) {
+  std::vector<std::string> userFile = readDataIntoVector("user.csv");
+  std::string password = userPass;
+  for (size_t i{0}; i < userFile.size(); i += 2) {
+    if (userName == userFile[i]) {
+      bool validate = bcrypt::validatePassword(userPass, userFile[i+1]);
+      if (validate) {
+        return true;
+      }
+      else
+        return false;
+    }
+  }
+  return false;
+}
+
 void invManage::addItem (std::string iName, std::string iCategory, int iQuantity) {
   std::vector<std::string> vec;
   std::fstream myFile;
@@ -143,76 +162,111 @@ void invManage::withdrawItem (std::string iName, int withdrawAmount) {
   }
 }
 
-void invManage::userOptionMenu() {
+void invManage::mainMenu() {
   short int userInput;
-  std::string itemName, itemCategory;
-  int itemQuantity;
-  std::cout << "Option 1: \n";
-  std::cout << "Option 2: \n";
-  std::cout << "Option 3: Add an item \n";
-  std::cout << "Option 4: Delete an item\n";
-  std::cout << "Option 5: Withdraw an item\n";
-  std::cout << "Option 6: Search for an item\n";
-  std::cout << "Option 7: Display all items\n";
-  std::cout << "Option 8: Display by category\n";
+  std::cout << "\n\n\n==========mainMenu()==========\n"
+            << "Option 1: Create Account\n"
+            << "Option 2: Login Account\n"
+            << "Option 3: Forgot Password\n"
+            << "Choose your option\n\n\n";
 
-  std::cout << "Choose your option\n";
   std::cin >> userInput;
-
   switch (userInput) {
-    case 1:
-      std::cout << "userInput -> " << userInput;
+    case 1: {
+      userCreate();
       break;
-
-    case 2:
-      std::cout << "userInput -> " << userInput;
+    }
+    case 2: {
+      std::cout << "Input (1)UserName (2)Password\n";
+      std::cin >> userName >> userPass;
+      bool validation = userValidate(userName, userPass);
+      if (validation) {
+        std::cout << "[Success] validation\n";
+        userOptionMenu();
+      }
+      else {
+        std::cout << "[Failure] validation\n";
+      }
       break;
-
+    }
     case 3: {
-      std::cout << "add an item in the following order, (1)ItemName (2)Category (3)Quantity\n";
-      std::cin >> itemName >> itemCategory >> itemQuantity;
-      for (size_t i{0}; i < itemName.size(); i++)
-        itemName[i] = tolower(itemName[i]);
-      for (size_t i{0}; i < itemCategory.size(); i++)
-        itemCategory[i] = tolower(itemCategory[i]);
-      addItem(itemName, itemCategory, itemQuantity);
-      break;
-    }
-    case 4: {
-      std::cout << "Input (1)ItemName to be deleted from the list\n";
-      std::cin >> itemName;
-      deleteItem(itemName);
+      //TODO: implmenet userForgotPass() function.
       break;
     }
 
-    case 5: {
-      std::cout << "Input (1)ItemName (2)ItemQuantity to withdraw\n";
-      std::cin >> itemName >> itemQuantity;
-      withdrawItem(itemName, itemQuantity);
+    default: {
+      std::cout << "executed default case\n";
       break;
-    }
-
-    case 6: {
-      std::cout << "Input (1)ItemName to start searching\n";
-      std::cin >> itemName;
-      searchItem(itemName);
-    }
-
-    case 7: {
-      display();
-    }
-
-    case 8: {
-      std::cout << "Input (1)Category Name to start displaying\n";
-      std::cin >> itemCategory;
-      displayCategory(itemCategory);
     }
   }
 }
 
+void invManage::userOptionMenu() {
+  short int userInput;
+  std::string itemName, itemCategory;
+  int itemQuantity;
+
+  while (true) {
+    std::cout << "\n\n\n===========userOptionMenu()=========\n";
+    std::cout << "Option 1: Add an item \n";
+    std::cout << "Option 2: Delete an item\n";
+    std::cout << "Option 3: Withdraw an item\n";
+    std::cout << "Option 4: Search for an item\n";
+    std::cout << "Option 5: Display all items\n";
+    std::cout << "Option 6: Display by category\n";
+
+    std::cout << "Choose your option\n\n\n";
+    std::cin >> userInput;
+
+    switch (userInput) {
+      case 1: {
+        std::cout << "add an item in the following order, (1)ItemName (2)Category (3)Quantity\n";
+        std::cin >> itemName >> itemCategory >> itemQuantity;
+        for (size_t i{0}; i < itemName.size(); i++)
+          itemName[i] = tolower(itemName[i]);
+        for (size_t i{0}; i < itemCategory.size(); i++)
+          itemCategory[i] = tolower(itemCategory[i]);
+        addItem(itemName, itemCategory, itemQuantity);
+        break;
+      }
+      case 2: {
+        std::cout << "Input (1)ItemName to be deleted from the list\n";
+        std::cin >> itemName;
+        deleteItem(itemName);
+        break;
+      }
+
+      case 3: {
+        std::cout << "Input (1)ItemName (2)ItemQuantity to withdraw\n";
+        std::cin >> itemName >> itemQuantity;
+        withdrawItem(itemName, itemQuantity);
+        break;
+      }
+
+      case 4: {
+        std::cout << "Input (1)ItemName to start searching\n";
+        std::cin >> itemName;
+        searchItem(itemName);
+        break;
+      }
+
+      case 5: {
+        display();
+        break;
+      }
+
+      case 6: {
+        std::cout << "Input (1)Category Name to start displaying\n";
+        std::cin >> itemCategory;
+        displayCategory(itemCategory);
+        break;
+      }
+    }
+  }
+}
 void invManage::searchItem(std::string iName) {
   bool itemFound = false;
-  int width = 10;
+  const int width = 10;
   std::vector<std::string> vec;
   std::fstream myFile;
   myFile.open("item.csv", std::ios::in);

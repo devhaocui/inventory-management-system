@@ -1,0 +1,6 @@
+/Users/haocui/inventory-management-system/build/CMakeFiles/inventory.dir
+/Users/haocui/inventory-management-system/build/CMakeFiles/edit_cache.dir
+/Users/haocui/inventory-management-system/build/CMakeFiles/rebuild_cache.dir
+/Users/haocui/inventory-management-system/build/lib/bcrypt/CMakeFiles/libBcrypt.dir
+/Users/haocui/inventory-management-system/build/lib/bcrypt/CMakeFiles/edit_cache.dir
+/Users/haocui/inventory-management-system/build/lib/bcrypt/CMakeFiles/rebuild_cache.dir

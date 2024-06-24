@@ -1,12 +1,8 @@
 #ifndef INVENTORYMANAGEMENT
 #define INVENTORYMANAGEMENT
 
-#include <iostream>
 #include <string>
-#include <fstream>
 #include <vector>
-#include <iomanip>
-#include "bcrypt.h"
 
 class invManage{
 private:
@@ -15,6 +11,8 @@ private:
 public:
   void userCreate();
   void userLogin(std::string, std::string);
+  bool userValidate(std::string, std::string);
+  void mainMenu();
   void userOptionMenu();
   void addItem (std::string, std::string, int);
   void deleteItem (std::string);
