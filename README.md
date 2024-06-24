@@ -24,6 +24,7 @@ The core of the codebase will be build based on C++.
 - [x] userCreate() creates a username and password using bcrypt slow hashing algorithm.
 - [x] userLogin() asks for userName and Password and use bcrypt::validatePassword() to authenticate the hashed password.
 - [x] mainMenu() main prompt to ask for registration and login.
+- [x] colorized some of the terminal displays.
 
 ### Next Priorities
 - [ ] print items based on itemName alphabetically. (probably insert item.csv into a tuple data structure)
