@@ -20,17 +20,5 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 - [x] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
 - [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
-### What the program currently does
-- [x] add an item and automatically saves into the ``item.csv`` file from the terminal command prompts. If an item already exists in the file it will only add the quantity specified into the existing quantity.
-- [x] deleteItem() function removes an item from the ``item.csv`` database.
-- [x] withdrawItem() function withdraws the amount of items from ``item.csv``. Withdraw will fail if attempting to overdraft.
-- [x] display() function to display all the items in the order they are originally added into the ``item.csv`` file.
-- [x] displayCategory() print items based on specified category.
-- [x] userCreate() creates a username and password using bcrypt slow hashing algorithm.
-- [x] userLogin() asks for userName and Password and use bcrypt::validatePassword() to authenticate the hashed password.
-- [x] mainMenu() main prompt to ask for registration and login.
-- [x] colorized some of the terminal displays. (no longer useful since ImGui is being implemented).
-- [x] somewhat working GUI in the process of being fully implemented
-
 ### Next Priority
-- [ ] get all the existing functions to implement into ImGui structure.
+- [In Progress] get all the existing functions to implement into ImGui structure.
