@@ -4,10 +4,9 @@ Typically designed for store clerks or store managers to update their current ex
 The core of the codebase will be build based on C++.
 ### How to use the program
 1. clone the repo using ``git clone https://github.com/devhaocui/inventory-management-system.git``
-2. run the run.sh file using ``sh run.sh``
-3. use ``cmake ..`` inside of the ``/build`` directory to build the necessary files.
-4. use ``make`` inside of the ``/build`` directory to build the executable ``./inventory``.
-5. run the program in terminal with ``./inventory``.
+2. use ``cmake ..`` inside of the ``/build`` directory to build the necessary files.
+3. use ``make`` inside of the ``/build`` directory to build the executable ``./inv``.
+4. run the program in terminal with ``./inv``.
 
 ### Desired Outcomes
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
