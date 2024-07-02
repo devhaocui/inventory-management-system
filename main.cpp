@@ -5,8 +5,8 @@
 #include <stdio.h>
 #define GL_SILENCE_DEPRECATION
 #include <GLFW/glfw3.h>
-#include <vector>
 #include <string>
+#include <iostream>
 
 static void glfw_error_callback(int error, const char* description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
@@ -60,11 +60,11 @@ int main(int, char**) {
   bool login_window = false;
   bool register_window = false;
   float duration {3.0f};
-  float timer {0.0f};
-  float wrong_password_text = false;
+  float display_text_timer {0.0f};
+  float display_text_bool = false;
 
   //PERF: Inventory Management .CPP function calls
-  std::vector<std::string> vec_data = inv.readDataIntoVector("user.csv");
+  
     // Main loop
   while (!glfwWindowShouldClose(window))
   {
@@ -91,6 +91,7 @@ int main(int, char**) {
       ImGui::End();
     }
 
+    // NOTE: LOGIN WINDOW
     if (login_window)
     {
       ImGui::SetNextWindowSize(ImVec2(700,700), ImGuiCond_Once);
@@ -100,34 +101,32 @@ int main(int, char**) {
       ImGui::Text("Time Elapsed: %i seconds", static_cast<int>(ImGui::GetTime()));
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
       ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
-      if (ImGui::Button("Enter"))
-      {
+      if (ImGui::Button("Enter")) {
         if (inv.userValidate(user_name,user_password)) {
           main_menu = true;
           login_window = false;
         }
         else {
-          wrong_password_text = true;
-          timer = 0.0f;
+          display_text_bool = true;
+          display_text_timer = 0.0f;
         }
       }
-
       ImGui::SameLine();
-      if (ImGui::Button("Back"))
-      {
+      if (ImGui::Button("Back")) {
         login_window = false;
         starting_window = true;
       }
-      if (wrong_password_text) {
+      if (display_text_bool) {
         ImGui::SameLine();
         ImGui::Text("Wrong username/password!");
-        timer += ImGui::GetIO().DeltaTime;
-        if (timer >= duration)
-          wrong_password_text = false;
+        display_text_timer += ImGui::GetIO().DeltaTime;
+        if (display_text_timer >= duration)
+          display_text_bool = false;
       }
       ImGui::End();
     }
 
+    // NOTE: REGISTER WINDOW
     if (register_window)
     {
       ImGui::SetNextWindowSize(ImVec2(700,700), ImGuiCond_Once);
@@ -138,32 +137,78 @@ int main(int, char**) {
       ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
       if (ImGui::Button("Enter"))
       {
-        //TODO: check if username exists in the file
-        //TODO: if not then store username and hashed password into file
+        inv.userName = user_name;
+        inv.userPass = user_password;
+        if (inv.userCreate()) { //function inv.userCreate() returns true if account is created successfully
+          //false if an existing username exists.
+          display_text_bool = true;
+          display_text_timer = 0.0f;
+        }
       }
-
+      
+      ImGui::SameLine();
       if (ImGui::Button("Back"))
       {
         register_window = false;
         starting_window = true;
-
       }
+      if (display_text_bool) {
+        ImGui::SameLine();
+        ImGui::Text("User Account Created!");
+        display_text_timer += ImGui::GetIO().DeltaTime;
+        if (display_text_timer >= duration)
+          display_text_bool = false;
+        }
       ImGui::End();
-      
     }
-
+    // NOTE: MAIN MENU
     if (main_menu)
     {
       ImGui::SetNextWindowSize(ImVec2(700,700), ImGuiCond_Once);
       ImGui::Begin("Main Menu", &main_menu);
-      if (ImGui::Button("Add An Item")) 
-      {
+      if (ImGui::Button("Add An Item")) {
         add_item_menu = true;
         main_menu = false;
       }
+      if (ImGui::Button("Delete An Item")) {
+        //delete_item_menu = true;
+        main_menu = false;
+      }
+      if (ImGui::Button("Withdraw An Item")) {
+        //TODO: 
+        // (1) withdraw an item by displaying the list of items first 
+        // (2) then create + - bars on the right to allow user to take out the amount
+        // (2.1) should user be able to increment it in real time without needing to click "Confirm"?
+
+        //withdraw_item_menu = true;
+        main_menu = false;
+      }
+      if (ImGui::Button("Display All Items")) {
+        // NOTE: should items be already sorted by name before displaying?
+
+        //display_all_menu = true;
+        main_menu = false;
+      }
+      if (ImGui::Button("Display By Category")) {
+        // NOTE: should items be already sorted by name before displaying?
+
+        //display_category_menu = true;
+        main_menu = false;
+      }
+      if (ImGui::Button("Search A Specific Item")) {
+        //display_search_item_menu = true;
+        main_menu = false;
+      }
+      if (ImGui::Button("Log Out/Exit")) {
+        starting_window = true;
+        main_menu = false;
+      }
+
+
       ImGui::End();
     }
 
+    // NOTE: ADD ITEM MENU
     if (add_item_menu)
     {
       ImGui::SetNextWindowSize(ImVec2(700,700), ImGuiCond_Once);
@@ -175,6 +220,10 @@ int main(int, char**) {
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
       ImGui::InputText("Item Category", item_category, IM_ARRAYSIZE(item_category));
       ImGui::InputText("Item Quantity", item_quantity, IM_ARRAYSIZE(item_quantity));
+      if (ImGui::Button("Add")) {
+        //WARNING: there's gotta be a better way for inputting item_quantity...
+        inv.addItem(item_name, item_category, stoi(static_cast<std::string> (item_quantity)));
+      }
       if (ImGui::Button("Back")) {
         main_menu = true;
         add_item_menu = false;
@@ -182,8 +231,7 @@ int main(int, char**) {
       ImGui::End();
     }
 
-
-      // Rendering 
+      // Rendering
     ImGui::Render();
     int display_w, display_h;
     glfwGetFramebufferSize(window, &display_w, &display_h);

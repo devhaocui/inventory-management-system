@@ -3,6 +3,12 @@ This is a development of a inventory management system that tracks lists of item
 Typically designed for store clerks or store managers to update their current existing stocks or add extra items to a new category.
 The core of the codebase will be build based on C++.
 ### How to use the program
+Note: This program is currently designed for macOS users. Cross-platform will come at a later time
+#### Dependencies
+1. you're going to install glfw, install it on your terminal using ``brew install glfw``
+2. also install cmake using ``brew install cmake``
+
+#### Usage
 1. clone the repo using ``git clone https://github.com/devhaocui/inventory-management-system.git``
 2. use ``cmake ..`` inside of the ``/build`` directory to build the necessary files.
 3. use ``make`` inside of the ``/build`` directory to build the executable ``./inv``.

@@ -15,10 +15,12 @@ std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
   return vec;
 }
 
-void invManage::userCreate() {
+bool invManage::userCreate() {
   bool userExist = false;
-  std::cout << "Insert \x1b[32m(1)Username (2)Password\x1b[0m\n";
-  std::cin >> userName >> userPass;
+  std::cout << "userCreate() Function called\n";
+  //std::cout << "Insert \x1b[32m(1)Username (2)Password\x1b[0m\n";
+  //std::cin >> userName >> userPass;
+  
   std::string password = bcrypt::generateHash(userPass);
 
   std::vector<std::string> file = readDataIntoVector("user.csv");
@@ -26,9 +28,18 @@ void invManage::userCreate() {
     if (userName == file[i]) {
       std::cout << "Registeration \x1b[31m[Failed]\x1b[0m. The username \x1b[31m(" << userName << "\x1b[0m) already exists!\n";
       userExist = true;
+      return false;
     }
   }
   if (!userExist) {
+    if (userName == "") {
+      std::cout << "\x1b[31m[Failed] \x1b[32mUsername cannot be empty!\x1b[0m\n";
+      return false;
+    }
+    if (userPass == "") {
+      std::cout << "\x1b[31m[Failed \x1b[32mPassword cannot be empty!\x1b[0m\n";
+      return false;
+    }
     std::cout << "\x1b[32m[Success]\x1b[0m Your account has been created!\n";
     std::cout << "Your Username is: \x1b[32m" << userName << "\x1b[0m\nYour Password is: \x1b[32m" << userPass << "\x1b[0m\n";
     std::fstream myFile;
@@ -44,6 +55,7 @@ void invManage::userCreate() {
         myFile.close();
       }
     }
+    return true;
   }
 
 bool invManage::userValidate(std::string userName, std::string userPass) {
@@ -53,10 +65,13 @@ bool invManage::userValidate(std::string userName, std::string userPass) {
     if (userName == userFile[i]) {
       bool validate = bcrypt::validatePassword(userPass, userFile[i + 1]);
       if (validate) {
+        std::cout << "\x1b[32m[Success] login\x1b[0m\n";
         return true;
       }
-      else
+      else {
+        std::cout << "\x1b[31m[Success] login\x1b[0m\n";
         return false;
+      }
     }
   }
   return false;

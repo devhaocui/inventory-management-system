@@ -6,10 +6,10 @@
 
 class invManage{
 private:
+public:
   std::string userName;
   std::string userPass;
-public:
-  void userCreate();
+  bool userCreate();
   void userLogin(std::string, std::string);
   bool userValidate(std::string, std::string);
   void mainMenu();
