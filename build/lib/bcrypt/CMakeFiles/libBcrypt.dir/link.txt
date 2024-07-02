@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc liblibBcrypt.a CMakeFiles/libBcrypt.dir/bcrypt.cpp.o CMakeFiles/libBcrypt.dir/blowfish.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib liblibBcrypt.a

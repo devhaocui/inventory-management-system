@@ -4,11 +4,6 @@
 #include "inventoryManagement.h"
 #include "bcrypt.h"
 
-const std::string red = "\x1b[31m";
-const std::string green = "\x1b[32m";
-const std::string yellow = "\x1b[33m";
-const std::string normal = "\x1b[0m";
-
 std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
   std::vector<std::string> vec;
   std::fstream myFile;
@@ -200,7 +195,8 @@ void invManage::displayCategory(std::string iCategory) {
     vec.push_back(line);
   }
   myFile.close();
-  std::cout << "\x1b[33mName |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
+  std::cout << "\x1b[33m===== displaying " << iCategory << " category =====\n";
+  std::cout << "Name |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
   for (size_t i{0}; i < vec.size(); i += 3) {
     if (iCategory == vec[i+1])
       std::cout << vec[i] << " | " << vec[i+1] << " | " << vec[i+2] << "\n";
@@ -311,10 +307,9 @@ void invManage::display() {
     vec.push_back(line);
   }
   myFile.close();
-  std::cout << "\x1b[32m===============display()===============\x1b[0m\n";
-  std::cout << "\x1b[33mName |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
-  for (size_t i{0}; i < vec.size(); i += 3) {
+  std::cout << "\x1b[33m===============display()===============\n";
+  std::cout << "Name |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
+  for (size_t i{0}; i < vec.size(); i += 3)
     std::cout << vec[i] << " | " << vec[i+1] << " | " << vec[i+2] << "\n";
-  }
   std::cout << "---------------------------------------\x1b[0m\n";
 }

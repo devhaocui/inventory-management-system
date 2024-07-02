@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.29.6/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/haocui/inventory-management-system
+CMAKE_SOURCE_DIR = /Users/haocui/invManSys
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/haocui/inventory-management-system/build
+CMAKE_BINARY_DIR = /Users/haocui/invManSys/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/inventory-management-system/build/CMakeFiles /Users/haocui/inventory-management-system/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles /Users/haocui/invManSys/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/inventory-management-system/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,37 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named inventory
+# Target rules for targets named inv
 
 # Build rule for target.
-inventory: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inventory
-.PHONY : inventory
+inv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inv
+.PHONY : inv
 
 # fast build rule for target.
-inventory/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/build
-.PHONY : inventory/fast
-
-#=============================================================================
-# Target rules for targets named libBcrypt
-
-# Build rule for target.
-libBcrypt: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libBcrypt
-.PHONY : libBcrypt
-
-# fast build rule for target.
-libBcrypt/fast:
-	$(MAKE) $(MAKESILENT) -f lib/bcrypt/CMakeFiles/libBcrypt.dir/build.make lib/bcrypt/CMakeFiles/libBcrypt.dir/build
-.PHONY : libBcrypt/fast
+inv/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/build
+.PHONY : inv/fast
 
 inventoryManagement.o: inventoryManagement.cpp.o
 .PHONY : inventoryManagement.o
 
 # target to build an object file
 inventoryManagement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/inventoryManagement.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/inventoryManagement.cpp.o
 .PHONY : inventoryManagement.cpp.o
 
 inventoryManagement.i: inventoryManagement.cpp.i
@@ -155,7 +142,7 @@ inventoryManagement.i: inventoryManagement.cpp.i
 
 # target to preprocess a source file
 inventoryManagement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/inventoryManagement.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/inventoryManagement.cpp.i
 .PHONY : inventoryManagement.cpp.i
 
 inventoryManagement.s: inventoryManagement.cpp.s
@@ -163,15 +150,231 @@ inventoryManagement.s: inventoryManagement.cpp.s
 
 # target to generate assembly for a file
 inventoryManagement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/inventoryManagement.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/inventoryManagement.cpp.s
 .PHONY : inventoryManagement.cpp.s
+
+lib/bcrypt/bcrypt.o: lib/bcrypt/bcrypt.cpp.o
+.PHONY : lib/bcrypt/bcrypt.o
+
+# target to build an object file
+lib/bcrypt/bcrypt.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o
+.PHONY : lib/bcrypt/bcrypt.cpp.o
+
+lib/bcrypt/bcrypt.i: lib/bcrypt/bcrypt.cpp.i
+.PHONY : lib/bcrypt/bcrypt.i
+
+# target to preprocess a source file
+lib/bcrypt/bcrypt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.i
+.PHONY : lib/bcrypt/bcrypt.cpp.i
+
+lib/bcrypt/bcrypt.s: lib/bcrypt/bcrypt.cpp.s
+.PHONY : lib/bcrypt/bcrypt.s
+
+# target to generate assembly for a file
+lib/bcrypt/bcrypt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.s
+.PHONY : lib/bcrypt/bcrypt.cpp.s
+
+lib/bcrypt/blowfish.o: lib/bcrypt/blowfish.cpp.o
+.PHONY : lib/bcrypt/blowfish.o
+
+# target to build an object file
+lib/bcrypt/blowfish.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o
+.PHONY : lib/bcrypt/blowfish.cpp.o
+
+lib/bcrypt/blowfish.i: lib/bcrypt/blowfish.cpp.i
+.PHONY : lib/bcrypt/blowfish.i
+
+# target to preprocess a source file
+lib/bcrypt/blowfish.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.i
+.PHONY : lib/bcrypt/blowfish.cpp.i
+
+lib/bcrypt/blowfish.s: lib/bcrypt/blowfish.cpp.s
+.PHONY : lib/bcrypt/blowfish.s
+
+# target to generate assembly for a file
+lib/bcrypt/blowfish.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.s
+.PHONY : lib/bcrypt/blowfish.cpp.s
+
+lib/imgui/imgui.o: lib/imgui/imgui.cpp.o
+.PHONY : lib/imgui/imgui.o
+
+# target to build an object file
+lib/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o
+.PHONY : lib/imgui/imgui.cpp.o
+
+lib/imgui/imgui.i: lib/imgui/imgui.cpp.i
+.PHONY : lib/imgui/imgui.i
+
+# target to preprocess a source file
+lib/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui.cpp.i
+.PHONY : lib/imgui/imgui.cpp.i
+
+lib/imgui/imgui.s: lib/imgui/imgui.cpp.s
+.PHONY : lib/imgui/imgui.s
+
+# target to generate assembly for a file
+lib/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui.cpp.s
+.PHONY : lib/imgui/imgui.cpp.s
+
+lib/imgui/imgui_demo.o: lib/imgui/imgui_demo.cpp.o
+.PHONY : lib/imgui/imgui_demo.o
+
+# target to build an object file
+lib/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o
+.PHONY : lib/imgui/imgui_demo.cpp.o
+
+lib/imgui/imgui_demo.i: lib/imgui/imgui_demo.cpp.i
+.PHONY : lib/imgui/imgui_demo.i
+
+# target to preprocess a source file
+lib/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.i
+.PHONY : lib/imgui/imgui_demo.cpp.i
+
+lib/imgui/imgui_demo.s: lib/imgui/imgui_demo.cpp.s
+.PHONY : lib/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.s
+.PHONY : lib/imgui/imgui_demo.cpp.s
+
+lib/imgui/imgui_draw.o: lib/imgui/imgui_draw.cpp.o
+.PHONY : lib/imgui/imgui_draw.o
+
+# target to build an object file
+lib/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o
+.PHONY : lib/imgui/imgui_draw.cpp.o
+
+lib/imgui/imgui_draw.i: lib/imgui/imgui_draw.cpp.i
+.PHONY : lib/imgui/imgui_draw.i
+
+# target to preprocess a source file
+lib/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.i
+.PHONY : lib/imgui/imgui_draw.cpp.i
+
+lib/imgui/imgui_draw.s: lib/imgui/imgui_draw.cpp.s
+.PHONY : lib/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.s
+.PHONY : lib/imgui/imgui_draw.cpp.s
+
+lib/imgui/imgui_impl_glfw.o: lib/imgui/imgui_impl_glfw.cpp.o
+.PHONY : lib/imgui/imgui_impl_glfw.o
+
+# target to build an object file
+lib/imgui/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o
+.PHONY : lib/imgui/imgui_impl_glfw.cpp.o
+
+lib/imgui/imgui_impl_glfw.i: lib/imgui/imgui_impl_glfw.cpp.i
+.PHONY : lib/imgui/imgui_impl_glfw.i
+
+# target to preprocess a source file
+lib/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.i
+.PHONY : lib/imgui/imgui_impl_glfw.cpp.i
+
+lib/imgui/imgui_impl_glfw.s: lib/imgui/imgui_impl_glfw.cpp.s
+.PHONY : lib/imgui/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.s
+.PHONY : lib/imgui/imgui_impl_glfw.cpp.s
+
+lib/imgui/imgui_impl_opengl3.o: lib/imgui/imgui_impl_opengl3.cpp.o
+.PHONY : lib/imgui/imgui_impl_opengl3.o
+
+# target to build an object file
+lib/imgui/imgui_impl_opengl3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o
+.PHONY : lib/imgui/imgui_impl_opengl3.cpp.o
+
+lib/imgui/imgui_impl_opengl3.i: lib/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : lib/imgui/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+lib/imgui/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : lib/imgui/imgui_impl_opengl3.cpp.i
+
+lib/imgui/imgui_impl_opengl3.s: lib/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : lib/imgui/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : lib/imgui/imgui_impl_opengl3.cpp.s
+
+lib/imgui/imgui_tables.o: lib/imgui/imgui_tables.cpp.o
+.PHONY : lib/imgui/imgui_tables.o
+
+# target to build an object file
+lib/imgui/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o
+.PHONY : lib/imgui/imgui_tables.cpp.o
+
+lib/imgui/imgui_tables.i: lib/imgui/imgui_tables.cpp.i
+.PHONY : lib/imgui/imgui_tables.i
+
+# target to preprocess a source file
+lib/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.i
+.PHONY : lib/imgui/imgui_tables.cpp.i
+
+lib/imgui/imgui_tables.s: lib/imgui/imgui_tables.cpp.s
+.PHONY : lib/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.s
+.PHONY : lib/imgui/imgui_tables.cpp.s
+
+lib/imgui/imgui_widgets.o: lib/imgui/imgui_widgets.cpp.o
+.PHONY : lib/imgui/imgui_widgets.o
+
+# target to build an object file
+lib/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o
+.PHONY : lib/imgui/imgui_widgets.cpp.o
+
+lib/imgui/imgui_widgets.i: lib/imgui/imgui_widgets.cpp.i
+.PHONY : lib/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+lib/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.i
+.PHONY : lib/imgui/imgui_widgets.cpp.i
+
+lib/imgui/imgui_widgets.s: lib/imgui/imgui_widgets.cpp.s
+.PHONY : lib/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+lib/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.s
+.PHONY : lib/imgui/imgui_widgets.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -179,7 +382,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -187,7 +390,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory.dir/build.make CMakeFiles/inventory.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -198,11 +401,37 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... inventory"
-	@echo "... libBcrypt"
+	@echo "... inv"
 	@echo "... inventoryManagement.o"
 	@echo "... inventoryManagement.i"
 	@echo "... inventoryManagement.s"
+	@echo "... lib/bcrypt/bcrypt.o"
+	@echo "... lib/bcrypt/bcrypt.i"
+	@echo "... lib/bcrypt/bcrypt.s"
+	@echo "... lib/bcrypt/blowfish.o"
+	@echo "... lib/bcrypt/blowfish.i"
+	@echo "... lib/bcrypt/blowfish.s"
+	@echo "... lib/imgui/imgui.o"
+	@echo "... lib/imgui/imgui.i"
+	@echo "... lib/imgui/imgui.s"
+	@echo "... lib/imgui/imgui_demo.o"
+	@echo "... lib/imgui/imgui_demo.i"
+	@echo "... lib/imgui/imgui_demo.s"
+	@echo "... lib/imgui/imgui_draw.o"
+	@echo "... lib/imgui/imgui_draw.i"
+	@echo "... lib/imgui/imgui_draw.s"
+	@echo "... lib/imgui/imgui_impl_glfw.o"
+	@echo "... lib/imgui/imgui_impl_glfw.i"
+	@echo "... lib/imgui/imgui_impl_glfw.s"
+	@echo "... lib/imgui/imgui_impl_opengl3.o"
+	@echo "... lib/imgui/imgui_impl_opengl3.i"
+	@echo "... lib/imgui/imgui_impl_opengl3.s"
+	@echo "... lib/imgui/imgui_tables.o"
+	@echo "... lib/imgui/imgui_tables.i"
+	@echo "... lib/imgui/imgui_tables.s"
+	@echo "... lib/imgui/imgui_widgets.o"
+	@echo "... lib/imgui/imgui_widgets.i"
+	@echo "... lib/imgui/imgui_widgets.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

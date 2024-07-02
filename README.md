@@ -12,7 +12,7 @@ The core of the codebase will be build based on C++.
 ### Desired Outcomes
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
 - [x] Create a user registration and login feature using basic hashing algorithm to validate each user.
-- [ ] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
+- [x] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
 - [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
 ### What the program currently does
@@ -24,9 +24,8 @@ The core of the codebase will be build based on C++.
 - [x] userCreate() creates a username and password using bcrypt slow hashing algorithm.
 - [x] userLogin() asks for userName and Password and use bcrypt::validatePassword() to authenticate the hashed password.
 - [x] mainMenu() main prompt to ask for registration and login.
-- [x] colorized some of the terminal displays.
+- [x] colorized some of the terminal displays. (no longer useful since ImGui is being implemented).
+- [x] somewhat working GUI in the process of being fully implemented
 
-### Next Priorities
-- [ ] print items based on itemName alphabetically. (probably insert item.csv into a tuple data structure)
-- [ ] forgotPass() to allow password reset.
-- [ ] implementation of ImGUI into the project.
+### Next Priority
+- [ ] get all the existing functions to implement into ImGui structure.
