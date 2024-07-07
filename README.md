@@ -22,3 +22,7 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 
 ### Next Priority
 - [In Progress] get all the existing functions to implement into ImGui structure.
+
+### Known Issues
+- [ ] Program crashes when attempting to add an non-integer value as a Quantity.
+- [ ] Most of the current functions could refactor to increase performance. (Not a big deal yet).
