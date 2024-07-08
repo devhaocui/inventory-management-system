@@ -68,6 +68,7 @@ int main(int, char**) {
   float display_text_bool = false;
   bool display_all_menu = false;
   bool display_category_menu = false;
+  bool display_search_menu = false;
 
   ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize;
   ImVec2 window_size = ImVec2(700, 700);
@@ -205,7 +206,7 @@ int main(int, char**) {
         main_menu = false;
       }
       if (ImGui::Button("Search A Specific Item")) {
-        //display_search_item_menu = true;
+        display_search_menu = true;
         main_menu = false;
       }
       if (ImGui::Button("Log Out/Exit")) {
@@ -360,6 +361,39 @@ int main(int, char**) {
       if (ImGui::Button("Back")) {
         main_menu = true;
         display_category_menu = false;
+      }
+      ImGui::End();
+    }
+    if (display_search_menu) {
+      item_csv = inv.readDataIntoVector("item.csv");
+      ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
+      ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
+      ImGui::Begin("Display By Item Name Menu", &display_search_menu, window_flags);
+      char item_name[128];
+      ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
+      for (int i{0}; i < 1; i++) {
+        ImGui::Text("");
+      }
+      ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders);
+      ImGui::TableSetupColumn("Item Name");
+      ImGui::TableSetupColumn("Item Category");
+      ImGui::TableSetupColumn("Item Quantity");
+      ImGui::TableHeadersRow();
+      for (int i{0}; i < item_csv.size(); i+=3) {
+        if (item_csv[i] == item_name) {
+          ImGui::TableNextRow();
+          ImGui::TableNextColumn();
+          ImGui::Text("(%d) %s", (i/3) + 1 , item_csv[i].c_str());
+          ImGui::TableNextColumn();
+          ImGui::Text("%s", item_csv[i+1].c_str());
+          ImGui::TableNextColumn();
+          ImGui::Text("%s", item_csv[i+2].c_str());
+        }
+      }
+      ImGui::EndTable();
+      if (ImGui::Button("Back")) {
+        main_menu = true;
+        display_search_menu = false;
       }
       ImGui::End();
     }

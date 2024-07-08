@@ -21,8 +21,8 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 - [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
 ### Next Priority
-- [In Progress] get all the existing functions to implement into ImGui structure.
 
+- [ ] Implement SQLite for database usage rather than local .csv files.
 ### Known Issues
 - [ ] Program crashes when attempting to add an non-integer value as a Quantity.
 - [ ] Program crashes when attempting to add an empty item.
