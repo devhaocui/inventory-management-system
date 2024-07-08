@@ -278,14 +278,18 @@ int main(int, char**) {
     }
 
     // NOTE: WITHDRAW ITEM MENU
+    // BUG: SOMETHING IS WRONG WHEN WITHDRAWING THE AMOUNT TO 0
+    // the commas after the withdrawn item are all removed from the item.csv file
     if (withdraw_item_menu) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Withdraw Item Menu", &withdraw_item_menu, window_flags);
       char item_name[128];
+      char item_quantity[128];
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
-      if (ImGui::Button("Confirm Deletion")) {
-        inv.deleteItem(item_name);
+      ImGui::InputText("Item Quantity", item_quantity, IM_ARRAYSIZE(item_quantity));
+      if (ImGui::Button("Confirm")) {
+        inv.withdrawItem(item_name, std::stoi(item_quantity));
         display_text_bool = true;
         display_text_timer = 0.0f;
       }
