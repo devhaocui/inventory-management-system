@@ -6,6 +6,7 @@ Typically designed for store clerks or store managers to update their current ex
 The core of the codebase will be build based on C++.
 
 The password hashing algorithm used is bcrypt. Below is a photo example of 
+
 ``user name = myname`` and ``password = isjeff``
 ![username_demo](https://github.com/devhaocui/inventory-management-system/assets/172475135/d35e46ac-17c8-43bf-ad79-aec50acf2ac4)
 ### How to use the program
