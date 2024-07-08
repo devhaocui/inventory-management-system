@@ -1,5 +1,6 @@
-### Overview
+https://github.com/devhaocui/inventory-management-system/assets/172475135/81f277bf-b7ec-43f0-bcd1-c22891ce667a
 
+### Overview
 This is a development of a inventory management system that tracks lists of items in a particular local store. 
 Typically designed for store clerks or store managers to update their current existing stocks or add extra items to a new category.
 The core of the codebase will be build based on C++.
@@ -19,7 +20,9 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
 - [x] Create a user registration and login feature using basic hashing algorithm to validate each user.
 - [x] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
-- [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
+- [ ] Modify the local
+
+ storage .csv files into SQLite and integrate it into an actual database.
 
 ### Next Priority
 
