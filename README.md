@@ -1,8 +1,5 @@
 ### Overview
 
-https://github.com/devhaocui/inventory-management-system/assets/172475135/7714f785-dda1-454a-88c3-cb261d67b2ca
-
-
 This is a development of a inventory management system that tracks lists of items in a particular local store. 
 Typically designed for store clerks or store managers to update their current existing stocks or add extra items to a new category.
 The core of the codebase will be build based on C++.
