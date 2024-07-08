@@ -20,7 +20,9 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
 - [x] Create a user registration and login feature using basic hashing algorithm to validate each user.
 - [x] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
-- [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
+- [ ] Modify the local
+
+ storage .csv files into SQLite and integrate it into an actual database.
 
 ### Next Priority
 
