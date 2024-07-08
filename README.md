@@ -4,6 +4,9 @@ https://github.com/devhaocui/inventory-management-system/assets/172475135/81f277
 This is a development of a inventory management system that tracks lists of items in a particular local store. 
 Typically designed for store clerks or store managers to update their current existing stocks or add extra items to a new category.
 The core of the codebase will be build based on C++.
+
+The password hashing algorithm used is bcrypt. Below is a photo example of the ``user name = myname`` and ``password = isjeff``
+![username_demo](https://github.com/devhaocui/inventory-management-system/assets/172475135/d35e46ac-17c8-43bf-ad79-aec50acf2ac4)
 ### How to use the program
 Note: This program is currently designed for macOS users. Cross-platform will come at a later time
 #### Dependencies
