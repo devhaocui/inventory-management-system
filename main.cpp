@@ -7,7 +7,6 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
-
 static void glfw_error_callback(int error, const char* description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
@@ -64,10 +63,11 @@ int main(int, char**) {
   bool register_window = false;
   bool delete_item_menu = false;
   bool withdraw_item_menu = false;
-  float duration {1.0f};
+  float duration {0.5f};
   float display_text_timer {0.0f};
   float display_text_bool = false;
   bool display_all_menu = false;
+  bool display_category_menu = false;
 
   ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize;
   ImVec2 window_size = ImVec2(700, 700);
@@ -145,8 +145,7 @@ int main(int, char**) {
       char user_password[128];
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
       ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
-      if (ImGui::Button("Enter"))
-      {
+      if (ImGui::Button("Enter")) {
         inv.userName = user_name;
         inv.userPass = user_password;
         if (inv.userCreate()) { //function inv.userCreate() returns true if account is created successfully
@@ -202,9 +201,7 @@ int main(int, char**) {
         main_menu = false;
       }
       if (ImGui::Button("Display By Category")) {
-        // NOTE: should items be already sorted by name before displaying?
-
-        //display_category_menu = true;
+        display_category_menu = true;
         main_menu = false;
       }
       if (ImGui::Button("Search A Specific Item")) {
@@ -320,7 +317,7 @@ int main(int, char**) {
       for (int i{0}; i < item_csv.size(); i+=3) {
         ImGui::TableNextRow();
         ImGui::TableNextColumn();
-        ImGui::Text("(%d) %s", i/3 , item_csv[i].c_str());
+        ImGui::Text("(%d) %s", (i/3) + 1 , item_csv[i].c_str());
         ImGui::TableNextColumn();
         ImGui::Text("%s", item_csv[i+1].c_str());
         ImGui::TableNextColumn();
@@ -330,6 +327,39 @@ int main(int, char**) {
       if (ImGui::Button("Back")) {
         main_menu = true;
         display_all_menu = false;
+      }
+      ImGui::End();
+    }
+    if (display_category_menu) {
+      item_csv = inv.readDataIntoVector("item.csv");
+      ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
+      ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
+      ImGui::Begin("Display By Category Menu", &display_category_menu, window_flags);
+      char item_category[128];
+      ImGui::InputText("Category Name", item_category, IM_ARRAYSIZE(item_category));
+      for (int i{0}; i < 1; i++) {
+        ImGui::Text("");
+      }
+      ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders);
+      ImGui::TableSetupColumn("Item Name");
+      ImGui::TableSetupColumn("Item Category");
+      ImGui::TableSetupColumn("Item Quantity");
+      ImGui::TableHeadersRow();
+      for (int i{0}; i < item_csv.size(); i+=3) {
+        if (item_csv[i+1] == item_category) {
+          ImGui::TableNextRow();
+          ImGui::TableNextColumn();
+          ImGui::Text("(%d) %s", (i/3) + 1 , item_csv[i].c_str());
+          ImGui::TableNextColumn();
+          ImGui::Text("%s", item_csv[i+1].c_str());
+          ImGui::TableNextColumn();
+          ImGui::Text("%s", item_csv[i+2].c_str());
+        }
+      }
+      ImGui::EndTable();
+      if (ImGui::Button("Back")) {
+        main_menu = true;
+        display_category_menu = false;
       }
       ImGui::End();
     }

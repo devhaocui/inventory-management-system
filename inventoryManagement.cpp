@@ -314,14 +314,7 @@ void invManage::userOptionMenu() {
 }
 
 void invManage::display() {
-  std::vector<std::string> vec;
-  std::fstream myFile;
-  myFile.open("item.csv", std::ios::in);
-  std::string line;
-  while (getline(myFile, line, ',')){
-    vec.push_back(line);
-  }
-  myFile.close();
+  std::vector<std::string> vec = readDataIntoVector("item.csv");
   std::cout << "\x1b[33m===============display()===============\n";
   std::cout << "Name |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
   for (size_t i{0}; i < vec.size(); i += 3)

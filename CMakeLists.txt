@@ -15,9 +15,7 @@ set(BCRYPT_DIR ${CMAKE_SOURCE_DIR}/lib/bcrypt)
 set(BCRYPT_SOURCES
 ${BCRYPT_DIR}/bcrypt.cpp
 ${BCRYPT_DIR}/blowfish.cpp
-#${BCRYPT_DIR}/bcrypt.h
-#${BCRYPT_DIR}/node_blf.h
-#${BCRYPT_DIR}/openbsd.h
+
 )
 
 include_directories(${BCRYPT_DIR})
@@ -32,22 +30,14 @@ set(IMGUI_SOURCES
   ${IMGUI_DIR}/imgui_widgets.cpp
   ${IMGUI_DIR}/imgui_impl_glfw.cpp
   ${IMGUI_DIR}/imgui_impl_opengl3.cpp
-  #${IMGUI_DIR}/imgui_impl_glfw.h
-  #${IMGUI_DIR}/imgui_impl_opengl3_loader.h
-  #${IMGUI_DIR}/imgui_impl_opengl3.h
-  #${IMGUI_DIR}/imgui_internal.h
-  #${IMGUI_DIR}/imgui.h
-  #${IMGUI_DIR}/imgui.ini
-  #${IMGUI_DIR}/imstb_rectpack.h
-  #${IMGUI_DIR}/imstb_textedit.h
-  #${IMGUI_DIR}/imstb_truetype.h
 )
 
 include_directories(${IMGUI_DIR})
-add_executable(${PROJECT_NAME}
-${MAIN_SOURCES}
-${BCRYPT_SOURCES}
-${IMGUI_SOURCES}
+add_executable(
+  ${PROJECT_NAME}
+  ${MAIN_SOURCES}
+  ${BCRYPT_SOURCES}
+  ${IMGUI_SOURCES}
 )
 
 find_package(OpenGL REQUIRED)
