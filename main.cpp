@@ -29,7 +29,7 @@ int main(int, char**) {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);            // Required on Mac
 
   // Create window with graphics context
-  GLFWwindow* window = glfwCreateWindow(800, 800, "Inventory Management System", nullptr, nullptr);
+  GLFWwindow* window = glfwCreateWindow(700, 700, "Inventory Management System", nullptr, nullptr);
   if (window == nullptr)
     return 1;
   glfwMakeContextCurrent(window);
@@ -72,10 +72,8 @@ int main(int, char**) {
 
   ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize;
   ImVec2 window_size = ImVec2(700, 700);
-  ImVec2 window_position = ImVec2(50, 50);
+  ImVec2 window_position = ImVec2(0, 0);
 
-  //PERF: Inventory Management .CPP function calls
-  
     // Main loop
   while (!glfwWindowShouldClose(window))
   {
@@ -393,7 +391,7 @@ int main(int, char**) {
       ImGui::EndTable();
       if (ImGui::Button("Back")) {
         main_menu = true;
-        display_search_menu = false;
+        display_search_menu= false;
       }
       ImGui::End();
     }
