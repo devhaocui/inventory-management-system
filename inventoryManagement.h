@@ -25,7 +25,7 @@ public:
   void displayCategory (std::string);
   void displayByQuantity ();
   std::vector<std::string> readDataIntoVector(std::string);
-  void writeDataIntoVector(std::vector<std::string>);
+  void writeDataIntoVector(std::vector<std::string>, std::string, std::string, int);
 };
 
 

@@ -6,13 +6,16 @@
 
 std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
   std::vector<std::string> vec;
-  std::fstream myFile;
+  std::fstream file;
   std::string line;
-  myFile.open(fileName, std::ios::in);
-  while (getline(myFile, line, ','))
+  file.open(fileName, std::ios::in);
+  while (getline(file, line, ','))
     vec.push_back(line);
-  myFile.close();
+  file.close();
   return vec;
+}
+
+void invManage::writeDataIntoVector(std::vector<std::string> vec, std::string iName, std::string iCategory, int iQuantity) {
 }
 
 bool invManage::userCreate() {
@@ -166,9 +169,7 @@ void invManage::withdrawItem (std::string iName, int withdrawAmount) {
         std::cout << "You have \x1b[32m(" << vec[i + 2] << ")\x1b[0m " << iName << " left in the store.\n";
         myFile.open("item.csv", std::ios::out);
         for (size_t i{0}; i < vec.size(); i++) {
-          myFile << vec[i];
-          if (i < vec.size() - i)
-            myFile << ",";
+          myFile << vec[i] << ",";
         }
         myFile.close();
         break;
