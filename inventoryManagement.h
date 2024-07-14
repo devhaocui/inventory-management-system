@@ -24,8 +24,9 @@ public:
   void displayByName (std::string);
   void displayCategory (std::string);
   void displayByQuantity ();
+  void tuple_sort();
+  void populate_stock();
   std::vector<std::string> readDataIntoVector(std::string);
-  void writeDataIntoVector(std::vector<std::string>, std::string, std::string, int);
 };
 
 

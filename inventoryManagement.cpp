@@ -4,6 +4,32 @@
 #include "inventoryManagement.h"
 #include "bcrypt.h"
 
+// NOTE: Populate items for performance test 
+// this is super slow because each addItem() call is retriving the entire item.csv list on every call.
+// but it will only be ran once so it is not as important.
+// will need to modify this completely and not use addItem() function.
+void invManage::populate_stock() {
+  for (size_t i{0}; i < 1000; i++) {
+    addItem("beef" + std::to_string(i), "food", 10);
+    addItem("beans" + std::to_string(i), "food", 15);
+    addItem("pork" + std::to_string(i), "food", 20);
+    addItem("samsunggalaxy" + std::to_string(i), "phone", 25);
+    addItem("couch" + std::to_string(i), "furniture", 30);
+    addItem("iphone" + std::to_string(i), "electronics", 35);
+    addItem("desklamp" + std::to_string(i), "eletronics", 40);
+    addItem("airpodpro" + std::to_string(i), "eletronics", 45);
+    addItem("airpodmax" + std::to_string(i), "eletronics", 50);
+    addItem("magicmouse" + std::to_string(i), "eletronics", 55);
+  }
+}
+
+
+using vec_tuple = std::vector<std::tuple<std::string, std::string, int>>;
+void invManage::tuple_sort() {
+  vec_tuple myVec;
+  std::fstream file;
+}
+
 std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
   std::vector<std::string> vec;
   std::fstream file;
@@ -13,9 +39,6 @@ std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
     vec.push_back(line);
   file.close();
   return vec;
-}
-
-void invManage::writeDataIntoVector(std::vector<std::string> vec, std::string iName, std::string iCategory, int iQuantity) {
 }
 
 bool invManage::userCreate() {
@@ -107,6 +130,7 @@ void invManage::addItem (std::string iName, std::string iCategory, int iQuantity
     vec.push_back(iName);
     vec.push_back(iCategory);
     vec.push_back(std::to_string(iQuantity));
+    //std::cout << "Added item -> " << iName << " -> " << iCategory << " -> " << iQuantity << "\n";
   }
 
   myFile.open("item.csv", std::ios::out);

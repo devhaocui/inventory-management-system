@@ -16,13 +16,14 @@ int main(int, char**) {
 
   // NOTE: INVENTORY MANAGEMENT SETUP
   invManage inv;
+  //inv.populate_stock(); // do not run this function if an item.csv file already exists!
   std::vector<std::string> item_csv = inv.readDataIntoVector("item.csv");
 
   glfwSetErrorCallback(glfw_error_callback);
   if (!glfwInit())
     return 1;
 
-  const char* glsl_version = "#version 150";
+  const static char* glsl_version = "#version 150";
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);  // 3.2+ only
@@ -105,8 +106,8 @@ int main(int, char**) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Login Window", NULL, window_flags);
-      static char user_name[128];
-      static char user_password[128];
+      static char user_name[128] {""};
+      static char user_password[128] {""};
       ImGui::Text("Time Elapsed: %i seconds", static_cast<int>(ImGui::GetTime()));
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
       ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
@@ -140,8 +141,8 @@ int main(int, char**) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Register Menu", NULL, window_flags);
-      char user_name[128];
-      char user_password[128];
+      static char user_name[128] {""};
+      static char user_password[128] {""};
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
       ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
       if (ImGui::Button("Enter")) {
@@ -219,9 +220,9 @@ int main(int, char**) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Add Item Menu", &add_item_menu, window_flags);
-      char item_name[128];
-      char item_category[128];
-      char item_quantity[128];
+      static char item_name[128] {""};
+      static char item_category[128] {""};
+      static char item_quantity[128] {""};
       ImGui::Text("Add Item Menu");
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
       ImGui::InputText("Item Category", item_category, IM_ARRAYSIZE(item_category));
@@ -256,7 +257,7 @@ int main(int, char**) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Delete Item Menu", &delete_item_menu, window_flags);
-      char item_name[128];
+      static char item_name[128] {""};
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
       if (ImGui::Button("Confirm Deletion")) {
         inv.deleteItem(item_name);
@@ -278,14 +279,12 @@ int main(int, char**) {
     }
 
     // NOTE: WITHDRAW ITEM MENU
-    // BUG: SOMETHING IS WRONG WHEN WITHDRAWING THE AMOUNT TO 0
-    // the commas after the withdrawn item are all removed from the item.csv file
     if (withdraw_item_menu) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Withdraw Item Menu", &withdraw_item_menu, window_flags);
-      char item_name[128];
-      char item_quantity[128];
+      static char item_name[128] {""};
+      static char item_quantity[128] {""};
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
       ImGui::InputText("Item Quantity", item_quantity, IM_ARRAYSIZE(item_quantity));
       if (ImGui::Button("Confirm")) {
@@ -338,7 +337,7 @@ int main(int, char**) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display By Category Menu", &display_category_menu, window_flags);
-      char item_category[128];
+      static char item_category[128] {""};
       ImGui::InputText("Category Name", item_category, IM_ARRAYSIZE(item_category));
       for (int i{0}; i < 1; i++) {
         ImGui::Text("");
@@ -371,9 +370,9 @@ int main(int, char**) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display By Item Name Menu", &display_search_menu, window_flags);
-      char item_name[128];
+      static char item_name[128] {""};
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
-      for (int i{0}; i < 1; i++) {
+      for (int i{0}; i < 5; i++) {
         ImGui::Text("");
       }
       ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders);

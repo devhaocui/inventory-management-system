@@ -31,7 +31,6 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 
 ### Next Priority
 
-- [ ] Switch all boolean variables into unsigned integer values that listens to values such as if (a = 1) then do something, if (a = 2) then do something else, etc etc.
 - [ ] Implement SQLite for database usage rather than local .csv files.
 ### Known Issues
 - [ ] Program crashes when attempting to add an non-integer value as a Quantity.
