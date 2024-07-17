@@ -369,6 +369,30 @@ lib/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.s
 .PHONY : lib/imgui/imgui_widgets.cpp.s
 
+lib/sqlite3/sqlite3.o: lib/sqlite3/sqlite3.c.o
+.PHONY : lib/sqlite3/sqlite3.o
+
+# target to build an object file
+lib/sqlite3/sqlite3.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o
+.PHONY : lib/sqlite3/sqlite3.c.o
+
+lib/sqlite3/sqlite3.i: lib/sqlite3/sqlite3.c.i
+.PHONY : lib/sqlite3/sqlite3.i
+
+# target to preprocess a source file
+lib/sqlite3/sqlite3.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.i
+.PHONY : lib/sqlite3/sqlite3.c.i
+
+lib/sqlite3/sqlite3.s: lib/sqlite3/sqlite3.c.s
+.PHONY : lib/sqlite3/sqlite3.s
+
+# target to generate assembly for a file
+lib/sqlite3/sqlite3.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.s
+.PHONY : lib/sqlite3/sqlite3.c.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -432,6 +456,9 @@ help:
 	@echo "... lib/imgui/imgui_widgets.o"
 	@echo "... lib/imgui/imgui_widgets.i"
 	@echo "... lib/imgui/imgui_widgets.s"
+	@echo "... lib/sqlite3/sqlite3.o"
+	@echo "... lib/sqlite3/sqlite3.i"
+	@echo "... lib/sqlite3/sqlite3.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/haocui/invManSys/lib/sqlite3/sqlite3.c" "CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o" "gcc" "CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o.d"
   "/Users/haocui/invManSys/inventoryManagement.cpp" "CMakeFiles/inv.dir/inventoryManagement.cpp.o" "gcc" "CMakeFiles/inv.dir/inventoryManagement.cpp.o.d"
   "/Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp" "CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o" "gcc" "CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o.d"
   "/Users/haocui/invManSys/lib/bcrypt/blowfish.cpp" "CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o" "gcc" "CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o.d"

@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o.d"
   "CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o"
   "CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o.d"
+  "CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o"
+  "CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o.d"
   "CMakeFiles/inv.dir/main.cpp.o"
   "CMakeFiles/inv.dir/main.cpp.o.d"
   "inv"
@@ -26,6 +28,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/inv.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

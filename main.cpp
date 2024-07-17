@@ -52,7 +52,11 @@ int main(int, char**) {
   ImGui_ImplGlfw_InitForOpenGL(window, true);
 
   ImGui_ImplOpenGL3_Init(glsl_version);
-    io.Fonts->AddFontFromFileTTF("../jetbrains.ttf", 20.0f);
+  io.Fonts->AddFontFromFileTTF("../jetbrains.ttf", 20.0f);
+  //static const float TEXT_BASE_SIZE {20.0f};
+  const float TEXT_BASE_HEIGHT = ImGui::GetTextLineHeightWithSpacing();
+
+
 
     // Our state
   ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
@@ -311,7 +315,8 @@ int main(int, char**) {
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display All Menu", &display_all_menu, window_flags);
 
-      ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders);
+      ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 100);
+      ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY, outer_size);
       ImGui::TableSetupColumn("Item Name");
       ImGui::TableSetupColumn("Item Category");
       ImGui::TableSetupColumn("Item Quantity");

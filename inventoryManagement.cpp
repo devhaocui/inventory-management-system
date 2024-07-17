@@ -3,24 +3,31 @@
 #include <iomanip>
 #include "inventoryManagement.h"
 #include "bcrypt.h"
+#include "sqlite3.h"
 
 // NOTE: Populate items for performance test 
 // this is super slow because each addItem() call is retriving the entire item.csv list on every call.
 // but it will only be ran once so it is not as important.
 // will need to modify this completely and not use addItem() function.
 void invManage::populate_stock() {
-  for (size_t i{0}; i < 1000; i++) {
-    addItem("beef" + std::to_string(i), "food", 10);
-    addItem("beans" + std::to_string(i), "food", 15);
-    addItem("pork" + std::to_string(i), "food", 20);
-    addItem("samsunggalaxy" + std::to_string(i), "phone", 25);
-    addItem("couch" + std::to_string(i), "furniture", 30);
-    addItem("iphone" + std::to_string(i), "electronics", 35);
-    addItem("desklamp" + std::to_string(i), "eletronics", 40);
-    addItem("airpodpro" + std::to_string(i), "eletronics", 45);
-    addItem("airpodmax" + std::to_string(i), "eletronics", 50);
-    addItem("magicmouse" + std::to_string(i), "eletronics", 55);
+  std::vector<std::string> vec;
+  std::fstream myFile;
+  myFile.open("item.csv", std::ios::in);
+  std::string line;
+
+  for (size_t i{0}; i < 10000; i++) {
+    vec.insert(vec.end(), {"beef" + std::to_string(i), "food", std::to_string(10)});
+    vec.insert(vec.end(), {"iphone" + std::to_string(i), "electronics", std::to_string(15)});
+    vec.insert(vec.end(), {"couch" + std::to_string(i), "furniture", std::to_string(20)});
   }
+
+  myFile.open("item.csv", std::ios::out);
+  for (size_t i{0}; i < vec.size(); i++) {
+    myFile << vec[i];
+    if (i < vec.size() - 1)
+      myFile << ",";
+  }
+  myFile.close();
 }
 
 
