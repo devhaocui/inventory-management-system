@@ -5,31 +5,37 @@
 #include "bcrypt.h"
 #include "sqlite3.h"
 
-// NOTE: Populate items for performance test 
-// this is super slow because each addItem() call is retriving the entire item.csv list on every call.
-// but it will only be ran once so it is not as important.
-// will need to modify this completely and not use addItem() function.
-void invManage::populate_stock() {
-  std::vector<std::string> vec;
-  std::fstream myFile;
-  myFile.open("item.csv", std::ios::in);
+struct item 
+{
+  std::string itemName;
+  std::string itemCategory;
+  int itemQuantity;
+
+  item(std::string name, std::string category, int quantity) 
+  : itemName(name), itemCategory(category), itemQuantity(quantity) {};
+};
+
+void invManage::populate_stock() 
+{
+  std::vector<item> vec;
+  for (size_t i{0}; i < 100000; i++) 
+  {
+    vec.push_back(item("beef" + std::to_string(i), "food", 10));
+    vec.push_back(item("iphone" + std::to_string(i), "electronic", 10));
+    vec.push_back(item("couch" + std::to_string(i), "furniture", 10));
+  }
+
+  std::fstream file;
   std::string line;
-
-  for (size_t i{0}; i < 10000; i++) {
-    vec.insert(vec.end(), {"beef" + std::to_string(i), "food", std::to_string(10)});
-    vec.insert(vec.end(), {"iphone" + std::to_string(i), "electronics", std::to_string(15)});
-    vec.insert(vec.end(), {"couch" + std::to_string(i), "furniture", std::to_string(20)});
+  file.open("item.csv", std::ios::out);
+  for (size_t i{0}; i < vec.size(); i++)
+  {
+    file << vec[i].itemName << ",";
+    file << vec[i].itemCategory << ",";
+    file << std::to_string(vec[i].itemQuantity) << ",";
   }
-
-  myFile.open("item.csv", std::ios::out);
-  for (size_t i{0}; i < vec.size(); i++) {
-    myFile << vec[i];
-    if (i < vec.size() - 1)
-      myFile << ",";
-  }
-  myFile.close();
+  file.close();
 }
-
 
 using vec_tuple = std::vector<std::tuple<std::string, std::string, int>>;
 void invManage::tuple_sort() {

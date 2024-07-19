@@ -16,7 +16,7 @@ int main(int, char**) {
 
   // NOTE: INVENTORY MANAGEMENT SETUP
   invManage inv;
-  //inv.populate_stock(); // do not run this function if an item.csv file already exists!
+  inv.populate_stock(); // do not run this function if an item.csv file already exists!
   std::vector<std::string> item_csv = inv.readDataIntoVector("item.csv");
 
   glfwSetErrorCallback(glfw_error_callback);
@@ -53,8 +53,8 @@ int main(int, char**) {
 
   ImGui_ImplOpenGL3_Init(glsl_version);
   io.Fonts->AddFontFromFileTTF("../jetbrains.ttf", 20.0f);
-  //static const float TEXT_BASE_SIZE {20.0f};
-  const float TEXT_BASE_HEIGHT = ImGui::GetTextLineHeightWithSpacing();
+  const float TEXT_BASE_HEIGHT {20.0f};
+  //const float TEXT_BASE_HEIGHT = ImGui::GetTextLineHeightWithSpacing();
 
 
 
@@ -74,7 +74,7 @@ int main(int, char**) {
   bool display_all_menu = false;
   bool display_category_menu = false;
   bool display_search_menu = false;
-
+  bool data_loaded = false;
   ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize;
   ImVec2 window_size = ImVec2(700, 700);
   ImVec2 window_position = ImVec2(0, 0);
@@ -309,36 +309,56 @@ int main(int, char**) {
       }
       ImGui::End();
     }
-    if (display_all_menu) {
-      item_csv = inv.readDataIntoVector("item.csv"); //update the added items
+
+    if (display_all_menu)
+    {
+      if (!data_loaded)
+      {
+        item_csv = inv.readDataIntoVector("item.csv"); //update the added items
+        data_loaded = true;
+      }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display All Menu", &display_all_menu, window_flags);
 
-      ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 100);
+      ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 25);
       ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY, outer_size);
+      ImGui::TableSetupScrollFreeze(0, 1); // Make top row always visible
       ImGui::TableSetupColumn("Item Name");
       ImGui::TableSetupColumn("Item Category");
       ImGui::TableSetupColumn("Item Quantity");
       ImGui::TableHeadersRow();
-      for (int i{0}; i < item_csv.size(); i+=3) {
-        ImGui::TableNextRow();
-        ImGui::TableNextColumn();
-        ImGui::Text("(%d) %s", (i/3) + 1 , item_csv[i].c_str());
-        ImGui::TableNextColumn();
-        ImGui::Text("%s", item_csv[i+1].c_str());
-        ImGui::TableNextColumn();
-        ImGui::Text("%s", item_csv[i+2].c_str());
+
+      ImGuiListClipper clipper;
+      clipper.Begin(item_csv.size() / 3);
+      while (clipper.Step())
+      {
+        for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++) 
+        {
+          int i = row * 3;
+          ImGui::TableNextRow();
+          ImGui::TableNextColumn();
+          ImGui::Text("(%d) %s", row + 1 , item_csv[i].c_str());
+          ImGui::TableNextColumn();
+          ImGui::Text("%s", item_csv[i + 1].c_str());
+          ImGui::TableNextColumn();
+          ImGui::Text("%s", item_csv[i + 2].c_str());
+        }
       }
       ImGui::EndTable();
       if (ImGui::Button("Back")) {
         main_menu = true;
         display_all_menu = false;
+        data_loaded = false;
       }
       ImGui::End();
     }
     if (display_category_menu) {
-      item_csv = inv.readDataIntoVector("item.csv");
+      if (!data_loaded)
+      {
+        item_csv = inv.readDataIntoVector("item.csv");
+        data_loaded = true;
+      }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display By Category Menu", &display_category_menu, window_flags);
@@ -347,11 +367,14 @@ int main(int, char**) {
       for (int i{0}; i < 1; i++) {
         ImGui::Text("");
       }
-      ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders);
+      ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 25);
+      ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY, outer_size);
+      ImGui::TableSetupScrollFreeze(0, 1); // Make top row always visible
       ImGui::TableSetupColumn("Item Name");
       ImGui::TableSetupColumn("Item Category");
       ImGui::TableSetupColumn("Item Quantity");
       ImGui::TableHeadersRow();
+
       for (int i{0}; i < item_csv.size(); i+=3) {
         if (item_csv[i+1] == item_category) {
           ImGui::TableNextRow();
@@ -367,11 +390,17 @@ int main(int, char**) {
       if (ImGui::Button("Back")) {
         main_menu = true;
         display_category_menu = false;
+        data_loaded = false;
       }
       ImGui::End();
     }
-    if (display_search_menu) {
-      item_csv = inv.readDataIntoVector("item.csv");
+    if (display_search_menu) 
+    {
+      if (!data_loaded)
+      {
+        item_csv = inv.readDataIntoVector("item.csv");
+        data_loaded = true;
+      }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display By Item Name Menu", &display_search_menu, window_flags);
@@ -400,6 +429,7 @@ int main(int, char**) {
       if (ImGui::Button("Back")) {
         main_menu = true;
         display_search_menu= false;
+        data_loaded = false;
       }
       ImGui::End();
     }
