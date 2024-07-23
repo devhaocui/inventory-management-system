@@ -3,12 +3,23 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
 
-class invManage{
+class invManage
+{
 private:
 public:
   std::string userName;
   std::string userPass;
+
+  struct Item 
+  {
+    std::string itemName;
+    std::string itemCategory;
+    int itemQuantity;
+    Item(std::string name, std::string category, int quanitty);
+  };
+
   bool userCreate();
   void userLogin(std::string, std::string);
   bool userValidate(std::string, std::string);
@@ -24,9 +35,10 @@ public:
   void displayByName (std::string);
   void displayCategory (std::string);
   void displayByQuantity ();
-  void tuple_sort();
   void populate_stock();
-  std::vector<std::string> readDataIntoVector(std::string);
+  std::vector<std::string> readDataIntoVectorUser(std::string);
+  std::vector<Item> readDataIntoVector(std::string);
+  std::unordered_map<std::string, std::vector<Item>> readDataIntoMap(std::string fileName);
 };
 
 

@@ -5,24 +5,19 @@
 #include "bcrypt.h"
 #include "sqlite3.h"
 
-struct item 
-{
-  std::string itemName;
-  std::string itemCategory;
-  int itemQuantity;
+size_t item_value = 3;
 
-  item(std::string name, std::string category, int quantity) 
-  : itemName(name), itemCategory(category), itemQuantity(quantity) {};
-};
+invManage::Item::Item(std::string name, std::string category, int quantity)
+  : itemName(name), itemCategory(category), itemQuantity(quantity) {}
 
 void invManage::populate_stock() 
 {
-  std::vector<item> vec;
+  std::vector<Item> vec;
   for (size_t i{0}; i < 100000; i++) 
   {
-    vec.push_back(item("beef" + std::to_string(i), "food", 10));
-    vec.push_back(item("iphone" + std::to_string(i), "electronic", 10));
-    vec.push_back(item("couch" + std::to_string(i), "furniture", 10));
+    vec.push_back(Item("beef" + std::to_string(i), "food", 10));
+    vec.push_back(Item("iphone" + std::to_string(i), "electronic", 10));
+    vec.push_back(Item("couch" + std::to_string(i), "furniture", 10));
   }
 
   std::fstream file;
@@ -37,13 +32,7 @@ void invManage::populate_stock()
   file.close();
 }
 
-using vec_tuple = std::vector<std::tuple<std::string, std::string, int>>;
-void invManage::tuple_sort() {
-  vec_tuple myVec;
-  std::fstream file;
-}
-
-std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
+std::vector<std::string> invManage::readDataIntoVectorUser(std::string fileName) {
   std::vector<std::string> vec;
   std::fstream file;
   std::string line;
@@ -54,6 +43,49 @@ std::vector<std::string> invManage::readDataIntoVector(std::string fileName) {
   return vec;
 }
 
+std::vector<invManage::Item> invManage::readDataIntoVector(std::string fileName) 
+{
+  std::vector<invManage::Item> vec;
+  std::fstream file;
+  std::string line;
+  file.open(fileName, std::ios::in);
+  int element_count {0};
+  std::string element_one;
+  std::string element_two;
+  int element_three;
+  while (getline(file, line, ','))
+  {
+    if (element_count == 0)
+    {
+      element_one = line;
+      element_count++;
+    }
+    else if (element_count == 1)
+    {
+      element_two = line;
+      element_count++;
+    }
+    else if (element_count == 2)
+    {
+      element_three = std::stoi(line);
+      vec.push_back(Item(element_one, element_two, element_three));
+      element_count = 0;
+    }
+  }
+  file.close();
+
+  return vec;
+}
+
+std::unordered_map<std::string, std::vector<invManage::Item>> readDataIntoMap(std::string fileName) {
+  std::unordered_map<std::string, std::vector<invManage::Item>> myMap;
+  return myMap;
+}
+// TODO: 
+// create an unordered_map that reads into the file,
+// store all of the items with the same category as keys
+// store all structs that belong to the same keys
+
 bool invManage::userCreate() {
   bool userExist = false;
   std::cout << "userCreate() Function called\n";
@@ -62,7 +94,7 @@ bool invManage::userCreate() {
   
   std::string password = bcrypt::generateHash(userPass);
 
-  std::vector<std::string> file = readDataIntoVector("user.csv");
+  std::vector<std::string> file = readDataIntoVectorUser("user.csv");
   for (size_t i{0}; i < file.size(); i += 2) {
     if (userName == file[i]) {
       std::cout << "Registeration \x1b[31m[Failed]\x1b[0m. The username \x1b[31m(" << userName << "\x1b[0m) already exists!\n";
@@ -98,7 +130,7 @@ bool invManage::userCreate() {
   }
 
 bool invManage::userValidate(std::string userName, std::string userPass) {
-  std::vector<std::string> userFile = readDataIntoVector("user.csv");
+  std::vector<std::string> userFile = readDataIntoVectorUser("user.csv");
   std::string password = userPass;
   for (size_t i{0}; i < userFile.size(); i += 2) {
     if (userName == userFile[i]) {
@@ -352,10 +384,12 @@ void invManage::userOptionMenu() {
 }
 
 void invManage::display() {
-  std::vector<std::string> vec = readDataIntoVector("item.csv");
+  //std::vector<std::string> vec = readDataIntoVector("item.csv");
+  std::vector<Item> vec = readDataIntoVector("item.csv");
   std::cout << "\x1b[33m===============display()===============\n";
   std::cout << "Name |" << std::setw(10) << " Category |" << std::setw(10) << " Quantity\n";
   for (size_t i{0}; i < vec.size(); i += 3)
-    std::cout << vec[i] << " | " << vec[i+1] << " | " << vec[i+2] << "\n";
+    //std::cout << vec[i] << " | " << vec[i+1] << " | " << vec[i+2] << "\n";
+    std::cout << vec[i].itemName << " | " << vec[i].itemCategory << " | " << vec[i].itemQuantity << "\n";
   std::cout << "---------------------------------------\x1b[0m\n";
 }

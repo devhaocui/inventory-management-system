@@ -6,6 +6,7 @@
 #define GL_SILENCE_DEPRECATION
 #include <GLFW/glfw3.h>
 #include <string>
+#include <iostream>
 
 static void glfw_error_callback(int error, const char* description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
@@ -17,8 +18,9 @@ int main(int, char**) {
   // NOTE: INVENTORY MANAGEMENT SETUP
   invManage inv;
   inv.populate_stock(); // do not run this function if an item.csv file already exists!
-  std::vector<std::string> item_csv = inv.readDataIntoVector("item.csv");
-
+//  std::vector<std::string> item_csv = inv.readDataIntoVector("item.csv");
+  std::vector<invManage::Item> item_csv = inv.readDataIntoVector("item.csv");
+  std::cout << "item_csv size is -> " << item_csv.size() << "\n";
   glfwSetErrorCallback(glfw_error_callback);
   if (!glfwInit())
     return 1;
@@ -310,6 +312,7 @@ int main(int, char**) {
       ImGui::End();
     }
 
+    // NOTE: Display All Menu
     if (display_all_menu)
     {
       if (!data_loaded)
@@ -330,19 +333,20 @@ int main(int, char**) {
       ImGui::TableHeadersRow();
 
       ImGuiListClipper clipper;
-      clipper.Begin(item_csv.size() / 3);
+      clipper.Begin(item_csv.size());
+      //size is 0 here...
+      //std:: cout << item_csv.size() << "\n";
       while (clipper.Step())
       {
         for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++) 
         {
-          int i = row * 3;
           ImGui::TableNextRow();
           ImGui::TableNextColumn();
-          ImGui::Text("(%d) %s", row + 1 , item_csv[i].c_str());
+          ImGui::Text("(%d) %s", row + 1 , item_csv[row].itemName.c_str());
           ImGui::TableNextColumn();
-          ImGui::Text("%s", item_csv[i + 1].c_str());
+          ImGui::Text("%s", item_csv[row].itemCategory.c_str());
           ImGui::TableNextColumn();
-          ImGui::Text("%s", item_csv[i + 2].c_str());
+          ImGui::Text("%i", item_csv[row].itemQuantity);
         }
       }
       ImGui::EndTable();
@@ -353,6 +357,8 @@ int main(int, char**) {
       }
       ImGui::End();
     }
+    
+    // NOTE: Display Category Menu
     if (display_category_menu) {
       if (!data_loaded)
       {
@@ -364,28 +370,57 @@ int main(int, char**) {
       ImGui::Begin("Display By Category Menu", &display_category_menu, window_flags);
       static char item_category[128] {""};
       ImGui::InputText("Category Name", item_category, IM_ARRAYSIZE(item_category));
-      for (int i{0}; i < 1; i++) {
-        ImGui::Text("");
-      }
       ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 25);
+
       ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY, outer_size);
       ImGui::TableSetupScrollFreeze(0, 1); // Make top row always visible
       ImGui::TableSetupColumn("Item Name");
       ImGui::TableSetupColumn("Item Category");
       ImGui::TableSetupColumn("Item Quantity");
       ImGui::TableHeadersRow();
+      ImGuiListClipper clipper;
 
-      for (int i{0}; i < item_csv.size(); i+=3) {
-        if (item_csv[i+1] == item_category) {
-          ImGui::TableNextRow();
-          ImGui::TableNextColumn();
-          ImGui::Text("(%d) %s", (i/3) + 1 , item_csv[i].c_str());
-          ImGui::TableNextColumn();
-          ImGui::Text("%s", item_csv[i+1].c_str());
-          ImGui::TableNextColumn();
-          ImGui::Text("%s", item_csv[i+2].c_str());
+      std::vector<invManage::Item> new_item_csv;
+        for (size_t i{0}; i < item_csv.size(); i++) {
+          if (item_csv[i].itemCategory == item_category)
+            new_item_csv.push_back(item_csv[i]);
+        }
+      clipper.Begin(new_item_csv.size());
+      while (clipper.Step())
+      {
+        for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++) 
+        {
+          // TODO: Need to create a separate vector<item> where it listens to the item_category
+          // and only push_back the value when the item matches the std::string. So probably
+          // need to add a button to allow users to confirm it. Or we can have it as it was previous
+          // of the code below that's commented out. Which allows real-time display but sacrifices performance.
+          //
+          // NOTE: We can add a method similar to how we did with display_all_menu() function.
+          // continually update item_category and listening to the user input updates.
+          // create a std::unordered_map<std::string category, std::vector<struct item> > 
+          // that stores all items based on their category.
+          // do nothing if category does not exists on the map.
+          // If the category exists on the map, display all the values from that category.
+            ImGui::TableNextRow();
+            ImGui::TableNextColumn();
+            ImGui::Text("(%d) %s", row + 1 , new_item_csv[row].itemName.c_str());
+            ImGui::TableNextColumn();
+            ImGui::Text("%s", new_item_csv[row].itemCategory.c_str());
+            ImGui::TableNextColumn();
+            ImGui::Text("%i", new_item_csv[row].itemQuantity);
         }
       }
+//      for (int i{0}; i < item_csv.size(); i++) {
+//        if (item_csv[i].itemCategory == item_category) {
+//          ImGui::TableNextRow();
+//          ImGui::TableNextColumn();
+//          ImGui::Text("(%d) %s", i + 1 , item_csv[i].itemName.c_str());
+//          ImGui::TableNextColumn();
+//          ImGui::Text("%s", item_csv[i].itemCategory.c_str());
+//          ImGui::TableNextColumn();
+//          ImGui::Text("%i", item_csv[i].itemQuantity);
+//        }
+//      }
       ImGui::EndTable();
       if (ImGui::Button("Back")) {
         main_menu = true;
@@ -414,15 +449,15 @@ int main(int, char**) {
       ImGui::TableSetupColumn("Item Category");
       ImGui::TableSetupColumn("Item Quantity");
       ImGui::TableHeadersRow();
-      for (int i{0}; i < item_csv.size(); i+=3) {
-        if (item_csv[i] == item_name) {
+      for (int i{0}; i < item_csv.size(); i++) {
+        if (item_csv[i].itemName == item_name) {
           ImGui::TableNextRow();
           ImGui::TableNextColumn();
-          ImGui::Text("(%d) %s", (i/3) + 1 , item_csv[i].c_str());
+          ImGui::Text("(%d) %s", i + 1 , item_csv[i].itemName.c_str());
           ImGui::TableNextColumn();
-          ImGui::Text("%s", item_csv[i+1].c_str());
+          ImGui::Text("%s", item_csv[i].itemCategory.c_str());
           ImGui::TableNextColumn();
-          ImGui::Text("%s", item_csv[i+2].c_str());
+          ImGui::Text("%i", item_csv[i].itemQuantity);
         }
       }
       ImGui::EndTable();
