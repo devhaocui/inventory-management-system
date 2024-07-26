@@ -31,10 +31,6 @@ public:
   bool categoryExists (std::string);
   bool itemExists(std::string);
   void searchItem (std::string);
-  void display();
-  void displayByName (std::string);
-  void displayCategory (std::string);
-  void displayByQuantity ();
   void populate_stock();
   std::vector<std::string> readDataIntoVectorUser(std::string);
   std::vector<Item> readDataIntoVector(std::string);
