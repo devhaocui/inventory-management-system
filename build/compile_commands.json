@@ -1,73 +1,73 @@
 [
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/main.cpp.o -c /Users/haocui/invManSys/main.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/main.cpp.o -c /Users/haocui/invManSys/main.cpp",
   "file": "/Users/haocui/invManSys/main.cpp",
   "output": "CMakeFiles/inv.dir/main.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/inventoryManagement.cpp.o -c /Users/haocui/invManSys/inventoryManagement.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/inventoryManagement.cpp.o -c /Users/haocui/invManSys/inventoryManagement.cpp",
   "file": "/Users/haocui/invManSys/inventoryManagement.cpp",
   "output": "CMakeFiles/inv.dir/inventoryManagement.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o -c /Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o -c /Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp",
   "file": "/Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp",
   "output": "CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o -c /Users/haocui/invManSys/lib/bcrypt/blowfish.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o -c /Users/haocui/invManSys/lib/bcrypt/blowfish.cpp",
   "file": "/Users/haocui/invManSys/lib/bcrypt/blowfish.cpp",
   "output": "CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui_demo.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui_draw.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_tables.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_tables.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui_tables.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -std=gnu++11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp",
   "file": "/Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp",
   "output": "CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o"
 },
 {
   "directory": "/Users/haocui/invManSys/build",
-  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o -c /Users/haocui/invManSys/lib/sqlite3/sqlite3.c",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -o CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o -c /Users/haocui/invManSys/lib/sqlite3/sqlite3.c",
   "file": "/Users/haocui/invManSys/lib/sqlite3/sqlite3.c",
   "output": "CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o"
 }

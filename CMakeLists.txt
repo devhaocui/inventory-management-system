@@ -37,7 +37,7 @@ set(SQLITE3_SOURCES
 
 include_directories(${BCRYPT_DIR})
 include_directories(${IMGUI_DIR})
-include_directories(${SQLITE_DIR})
+include_directories(${SQLITE3_DIR})
 
 add_executable(
   ${PROJECT_NAME}
