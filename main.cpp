@@ -2,6 +2,7 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include "inventoryManagement.h"
+#include <cstdlib>
 #include <stdio.h>
 #define GL_SILENCE_DEPRECATION
 #include "GLFW/glfw3.h"
@@ -27,6 +28,7 @@ int main(int, char **) {
   const static char *glsl_version = "#version 150";
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+  glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // 3.2+ only
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Required on Mac
 
@@ -43,10 +45,8 @@ int main(int, char **) {
   ImGui::CreateContext();
   ImGuiIO &io = ImGui::GetIO();
   (void)io;
-  io.ConfigFlags |=
-      ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
-  io.ConfigFlags |=
-      ImGuiConfigFlags_NavEnableGamepad; // Enable Gamepad Controls
+  io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
+  io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad; // Enable Gamepad Controls
 
   // Setup Dear ImGui style
   // ImGui::StyleColorsDark();
@@ -95,6 +95,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Starting Window", NULL, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       if (ImGui::Button("(1) Login") || ImGui::IsKeyPressed(ImGuiKey_1)) {
         login_window = true;
         starting_window = false;
@@ -111,6 +112,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Login Window", NULL, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char user_name[128]{""};
       static char user_password[128]{""};
       ImGui::Text("Time Elapsed: %i seconds",
@@ -146,6 +148,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Register Menu", NULL, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char user_name[128]{""};
       static char user_password[128]{""};
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
@@ -180,6 +183,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Main Menu", &main_menu, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       if (ImGui::Button("(1) Add An Item") || ImGui::IsKeyPressed(ImGuiKey_1)) {
         add_item_menu = true;
         main_menu = false;
@@ -215,8 +219,9 @@ int main(int, char **) {
         main_menu = false;
       }
       if (ImGui::Button("(7) Log Out/Exit") || ImGui::IsKeyPressed(ImGuiKey_7)) {
-        starting_window = true;
-        main_menu = false;
+        exit(1);
+//        starting_window = true;
+//        main_menu = false;
       }
       ImGui::End();
     }
@@ -226,6 +231,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Add Item Menu", &add_item_menu, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
       static char item_category[128]{""};
       static char item_quantity[128]{""};
@@ -266,6 +272,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Delete Item Menu", &delete_item_menu, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
       if (ImGui::Button("Confirm Deletion") ||
@@ -293,6 +300,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Withdraw Item Menu", &withdraw_item_menu, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
       static char item_quantity[128]{""};
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
@@ -326,7 +334,7 @@ int main(int, char **) {
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
       ImGui::Begin("Display All Menu", &display_all_menu, window_flags);
-
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 25);
       ImGui::BeginTable("table2", 3,
                         ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY,
@@ -369,16 +377,13 @@ int main(int, char **) {
       }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
-      ImGui::Begin("Display By Category Menu", &display_category_menu,
-                   window_flags);
+      ImGui::Begin("Display By Category Menu", &display_category_menu,window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_category[128]{""};
       ImGui::InputText("Category Name", item_category,
                        IM_ARRAYSIZE(item_category));
       ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 25);
-
-      ImGui::BeginTable("table2", 3,
-                        ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY,
-                        outer_size);
+      ImGui::BeginTable("table2", 3,ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY, outer_size);
       ImGui::TableSetupScrollFreeze(0, 1); // Make top row always visible
       ImGui::TableSetupColumn("Item Name");
       ImGui::TableSetupColumn("Item Category");
@@ -386,6 +391,7 @@ int main(int, char **) {
       ImGui::TableHeadersRow();
       ImGuiListClipper clipper;
 
+      //NOTE: The code here lags when a category is found.
       std::vector<invManage::Item> new_item_csv;
       for (size_t i{0}; i < item_csv.size(); i++) {
         if (item_csv[i].itemCategory == item_category)
@@ -433,8 +439,8 @@ int main(int, char **) {
       }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
       ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
-      ImGui::Begin("Display By Item Name Menu", &display_search_menu,
-                   window_flags);
+      ImGui::Begin("Display By Item Name Menu", &display_search_menu, window_flags);
+      ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
       for (int i{0}; i < 5; i++) {
@@ -447,6 +453,7 @@ int main(int, char **) {
       ImGui::TableHeadersRow();
       for (int i{0}; i < item_csv.size(); i++) {
         if (item_csv[i].itemName == item_name) {
+          ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
           ImGui::TableNextRow();
           ImGui::TableNextColumn();
           ImGui::Text("(%d) %s", i + 1, item_csv[i].itemName.c_str());

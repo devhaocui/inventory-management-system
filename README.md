@@ -29,6 +29,10 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 - [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
 ### Recent Updates
-- [x] Implemented all functions to listen to keyboard button when pressed to speed up user experience rather than using mouse only option.
+- [x] Implemented all functions to listen to keyboard button when pressed to speed up user experience rather than using mouse only option. Below is a short video demo of using these keyboard buttons to navigate the menu.
+https://github.com/user-attachments/assets/b5cefc01-0616-421a-a80c-8d3886804765
+
 ### Known Issues
 - [x] Program currently crashes whenever an empty value is inserted (exception for login/register functions). 
+- [x] New functionality of keyboard shortcuts causes the program to be able to select (7) logout option through key pressed and enter back into the program without the need to login. (temporary fixed with using system.exit() rather than going back to the login/register menu)
+

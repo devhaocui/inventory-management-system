@@ -64,7 +64,6 @@ invManage::readDataIntoVector(std::string fileName) {
     }
   }
   file.close();
-
   return vec;
 }
 

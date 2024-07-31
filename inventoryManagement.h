@@ -12,6 +12,7 @@ public:
   std::string userPass;
 
   struct Item {
+    int itemID;
     std::string itemName;
     std::string itemCategory;
     int itemQuantity;
