@@ -30,6 +30,7 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 
 ### Recent Updates
 - [x] Implemented all functions to listen to keyboard button when pressed to speed up user experience rather than using mouse only option. Below is a short video demo of using these keyboard buttons to navigate the menu.
+
 https://github.com/user-attachments/assets/b5cefc01-0616-421a-a80c-8d3886804765
 
 ### Known Issues
