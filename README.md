@@ -25,13 +25,10 @@ Note: This program is currently designed for macOS users. Cross-platform will co
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
 - [x] Create a user registration and login feature using basic hashing algorithm to validate each user.
 - [x] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
+- [x] Keyboard shortcuts such as using 1~9 keyboard to navigate the menu, esc to go back, enter to confirm information.
 - [ ] Modify the local storage .csv files into SQLite and integrate it into an actual database.
 
 ### Recent Updates
-
-- [x] Hovering over display menus are now super fast due to using a clipping method.
-- [x] Converted all functions into using struct Item datatype.
-- [x] removed various console functions as the project is now fully integrated into using Dear ImGui.
+- [x] Implemented all functions to listen to keyboard button when pressed to speed up user experience rather than using mouse only option.
 ### Known Issues
-- [ ] Program crashes when attempting to add an non-integer value as a Quantity.
-- [ ] Program crashes when attempting to add an empty item.
+- [x] Program currently crashes whenever an empty value is inserted (exception for login/register functions). 
