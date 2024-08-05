@@ -4,12 +4,14 @@
 #include <iomanip>
 #include <iostream>
 #include <sqlite3.h>
+#include <sstream> //for std::stringstream
 
 // class invManage -> of struct Item -> of a constructor Item call
 invManage::Item::Item(std::string name, std::string category, int quantity)
     : itemName(name), itemCategory(category), itemQuantity(quantity) {}
 
-void invManage::populate_stock() {
+void invManage::populate_stock()
+{
   std::vector<Item> vec;
   for (size_t i{0}; i < 100000; i++) {
     vec.push_back(Item("beef" + std::to_string(i), "food", 10));
@@ -28,8 +30,45 @@ void invManage::populate_stock() {
   file.close();
 }
 
-std::vector<std::string>
-invManage::readDataIntoVectorUser(std::string fileName) {
+// Inserting values into the database
+int invManage::sqltest()
+{
+  sqlite3 *db;
+  //char *errMsg = 0;
+  //int rc;
+
+  // Open a database connection
+  sqlite3_open("example.db", &db);
+
+  // Create a table
+  const char *sqlCreateTable = "CREATE TABLE IF NOT EXISTS company("
+                               "id INT PRIMARY KEY     NOT NULL,"
+                               "name           TEXT    NOT NULL,"
+                               "age            INT     NOT NULL,"
+                               "address        CHAR(50),"
+                               "salary         REAL );";
+  sqlite3_exec(db, sqlCreateTable, 0, 0, 0);
+
+  sqlite3_exec(db, "BEGIN TRANSACTION;", 0, 0, 0);
+  std::ostringstream oStringStream;
+  for (int i = 1; i <= 1000000; ++i)
+  {
+    oStringStream << "INSERT OR IGNORE INTO company (id, name, age, address, salary) "
+                    << "VALUES (" << i << ", 'Name" << i << "', " << (20 + i % 50) << ", 'Address" << i << "', " << (30000 + i * 100) << "); ";
+  }
+  std::string sqlInsert = oStringStream.str();
+  sqlite3_exec(db, sqlInsert.c_str(), 0, 0, 0);
+  sqlite3_exec(db, "COMMIT;", 0, 0, 0);
+  sqlite3_close(db);
+  return 0;
+}
+// TODO:
+// (1) Grabbing values from the database
+// (2) delete values from the database
+// (3) modify values from database
+
+std::vector<std::string> invManage::readDataIntoVectorUser(std::string fileName)
+{
   std::vector<std::string> vec;
   std::fstream file;
   std::string line;
@@ -40,8 +79,8 @@ invManage::readDataIntoVectorUser(std::string fileName) {
   return vec;
 }
 
-std::vector<invManage::Item>
-invManage::readDataIntoVector(std::string fileName) {
+std::vector<invManage::Item> invManage::readDataIntoVector(std::string fileName)
+{
   std::vector<invManage::Item> vec;
   std::fstream file;
   std::string line;
@@ -67,8 +106,7 @@ invManage::readDataIntoVector(std::string fileName) {
   return vec;
 }
 
-std::unordered_map<std::string, std::vector<invManage::Item>>
-readDataIntoMap(std::string fileName) {
+std::unordered_map<std::string, std::vector<invManage::Item>> readDataIntoMap(std::string fileName) {
   std::unordered_map<std::string, std::vector<invManage::Item>> myMap;
   return myMap;
 }

@@ -17,8 +17,8 @@ static void glfw_error_callback(int error, const char *description) {
 int main(int, char **) {
   // NOTE: INVENTORY MANAGEMENT SETUP
   invManage inv;
-  inv.populate_stock(); // do not run this function if an item.csv file already
-                        // exists!
+  inv.populate_stock(); // do not run this function if an item.csv file already exists!
+  inv.sqltest();
   std::vector<invManage::Item> item_csv = inv.readDataIntoVector("item.csv");
   std::cout << "item_csv size is -> " << item_csv.size() << "\n";
   glfwSetErrorCallback(glfw_error_callback);
