@@ -37,7 +37,6 @@ public:
   std::vector<Item> readDataIntoVector(std::string);
   std::unordered_map<std::string, std::vector<Item>>
   readDataIntoMap(std::string fileName);
-  int sqltest();
 };
 
 #endif // !INVENTORYMANAGEMENT

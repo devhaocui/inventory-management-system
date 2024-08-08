@@ -4,11 +4,18 @@
 #include <iomanip>
 #include <iostream>
 #include <sqlite3.h>
-#include <sstream> //for std::stringstream
 
 // class invManage -> of struct Item -> of a constructor Item call
+//invManage::Item::Item(std::string name, std::string category, int quantity)
+//    : itemName(name), itemCategory(category), itemQuantity(quantity) {}
+
+// Equivalent method of the constructor above
 invManage::Item::Item(std::string name, std::string category, int quantity)
-    : itemName(name), itemCategory(category), itemQuantity(quantity) {}
+{
+  itemName = name;
+  itemCategory = category;
+  itemQuantity = quantity;
+}
 
 void invManage::populate_stock()
 {
@@ -29,43 +36,6 @@ void invManage::populate_stock()
   }
   file.close();
 }
-
-// Inserting values into the database
-int invManage::sqltest()
-{
-  sqlite3 *db;
-  //char *errMsg = 0;
-  //int rc;
-
-  // Open a database connection
-  sqlite3_open("example.db", &db);
-
-  // Create a table
-  const char *sqlCreateTable = "CREATE TABLE IF NOT EXISTS company("
-                               "id INT PRIMARY KEY     NOT NULL,"
-                               "name           TEXT    NOT NULL,"
-                               "age            INT     NOT NULL,"
-                               "address        CHAR(50),"
-                               "salary         REAL );";
-  sqlite3_exec(db, sqlCreateTable, 0, 0, 0);
-
-  sqlite3_exec(db, "BEGIN TRANSACTION;", 0, 0, 0);
-  std::ostringstream oStringStream;
-  for (int i = 1; i <= 1000000; ++i)
-  {
-    oStringStream << "INSERT OR IGNORE INTO company (id, name, age, address, salary) "
-                    << "VALUES (" << i << ", 'Name" << i << "', " << (20 + i % 50) << ", 'Address" << i << "', " << (30000 + i * 100) << "); ";
-  }
-  std::string sqlInsert = oStringStream.str();
-  sqlite3_exec(db, sqlInsert.c_str(), 0, 0, 0);
-  sqlite3_exec(db, "COMMIT;", 0, 0, 0);
-  sqlite3_close(db);
-  return 0;
-}
-// TODO:
-// (1) Grabbing values from the database
-// (2) delete values from the database
-// (3) modify values from database
 
 std::vector<std::string> invManage::readDataIntoVectorUser(std::string fileName)
 {
