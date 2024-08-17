@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for ./dependency/glfw3.
+./dependency/glfw3_DIR:PATH=./dependency/glfw3_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for ./dependency/glfw.
+./dependency/glfw_DIR:PATH=./dependency/glfw_DIR-NOTFOUND
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -226,7 +232,7 @@ OPENGL_gl_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/
 OPENGL_glu_LIBRARY:FILEPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
 
 //The directory containing a CMake configuration file for glfw3.
-glfw3_DIR:PATH=/opt/homebrew/lib/cmake/glfw3
+glfw3_DIR:PATH=glfw3_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for glfw.
 glfw_DIR:PATH=glfw_DIR-NOTFOUND

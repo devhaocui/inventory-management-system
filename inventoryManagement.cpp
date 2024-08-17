@@ -28,7 +28,7 @@ void invManage::populate_stock()
 
   std::fstream file;
   std::string line;
-  file.open("item.csv", std::ios::out);
+  file.open(itemFilePath, std::ios::out);
   for (size_t i{0}; i < vec.size(); i++) {
     file << vec[i].itemName << ",";
     file << vec[i].itemCategory << ",";
@@ -89,7 +89,7 @@ bool invManage::userCreate() {
   bool userExist = false;
   std::cout << "userCreate() Function called\n";
   std::string password = bcrypt::generateHash(userPass);
-  std::vector<std::string> file = readDataIntoVectorUser("user.csv");
+  std::vector<std::string> file = readDataIntoVectorUser(userFilePath);
   for (size_t i{0}; i < file.size(); i += 2) {
     if (userName == file[i]) {
       std::cout
@@ -117,7 +117,7 @@ bool invManage::userCreate() {
     file.push_back(userName);
     file.push_back(password);
     for (size_t i{0}; i < file.size(); i += 2) {
-      myFile.open("user.csv", std::ios::out);
+      myFile.open(userFilePath, std::ios::out);
       for (size_t i{0}; i < file.size(); i++) {
         myFile << file[i];
         if (i < file.size() - 1)
@@ -130,7 +130,7 @@ bool invManage::userCreate() {
 }
 
 bool invManage::userValidate(std::string userName, std::string userPass) {
-  std::vector<std::string> userFile = readDataIntoVectorUser("user.csv");
+  std::vector<std::string> userFile = readDataIntoVectorUser(userFilePath);
   std::string password = userPass;
   for (size_t i{0}; i < userFile.size(); i += 2) {
     if (userName == userFile[i]) {
@@ -150,7 +150,7 @@ bool invManage::userValidate(std::string userName, std::string userPass) {
 void invManage::addItem(std::string iName, std::string iCategory,
                         int iQuantity) {
   std::fstream file;
-  std::vector<Item> vec = readDataIntoVector("item.csv");
+  std::vector<Item> vec = readDataIntoVector(itemFilePath);
   bool newItemAdded = false;
   for (size_t i{0}; i < vec.size(); i++) {
     // do this if there exists an item already...
@@ -158,7 +158,7 @@ void invManage::addItem(std::string iName, std::string iCategory,
       newItemAdded = true;
       vec[i].itemQuantity += iQuantity;
       // write back into the file
-      file.open("item.csv", std::ios::out);
+      file.open(itemFilePath, std::ios::out);
       for (size_t i{0}; i < vec.size(); i++) {
         file << vec[i].itemName << ',' << vec[i].itemCategory << ','
              << vec[i].itemQuantity << ',';
@@ -175,7 +175,7 @@ void invManage::addItem(std::string iName, std::string iCategory,
   // do this if a new item needs to be added
   if (!newItemAdded || vec.empty()) {
     Item temp = invManage::Item(iName, iCategory, iQuantity);
-    file.open("item.csv", std::ios::app | std::ios::ate);
+    file.open(itemFilePath, std::ios::app | std::ios::ate);
     file << temp.itemName << ',' << temp.itemCategory << ','
          << temp.itemQuantity << ',';
     file.close();
@@ -184,7 +184,7 @@ void invManage::addItem(std::string iName, std::string iCategory,
 
 void invManage::deleteItem(std::string iName) {
   bool itemDeleted = false;
-  std::vector<Item> vec = readDataIntoVector("item.csv");
+  std::vector<Item> vec = readDataIntoVector(itemFilePath);
   std::fstream file;
   std::string line;
 
@@ -194,7 +194,7 @@ void invManage::deleteItem(std::string iName) {
       std::cout << "\x1b[32m[Deleted]\x1b[0m (" << iName
                 << ") from the database.\n";
       vec.erase(vec.begin() + i);
-      file.open("item.csv", std::ios::out);
+      file.open(itemFilePath, std::ios::out);
       for (size_t i{0}; i < vec.size(); i++)
         file << vec[i].itemName << ',' << vec[i].itemCategory << ','
              << vec[i].itemQuantity << ',';
@@ -207,7 +207,7 @@ void invManage::deleteItem(std::string iName) {
 }
 
 void invManage::withdrawItem(std::string iName, int withdrawAmount) {
-  std::vector<invManage::Item> vec = readDataIntoVector("item.csv");
+  std::vector<invManage::Item> vec = readDataIntoVector(itemFilePath);
   for (size_t i{0}; i < vec.size(); i++) {
     // if iName matches with the vec[i].itemName
     if (iName == vec[i].itemName) {
@@ -228,7 +228,7 @@ void invManage::withdrawItem(std::string iName, int withdrawAmount) {
   }
   // write back into the file
   std::fstream file;
-  file.open("item.csv", std::ios::out);
+  file.open(itemFilePath, std::ios::out);
   for (size_t i{0}; i < vec.size(); i++) {
     file << vec[i].itemName << ',' << vec[i].itemCategory << ','
          << vec[i].itemQuantity << ',';
@@ -240,7 +240,7 @@ void invManage::withdrawItem(std::string iName, int withdrawAmount) {
 void invManage::searchItem(std::string iName) {
   bool itemFound = false;
   const int width = 10;
-  std::vector<Item> vec = readDataIntoVector("item.csv");
+  std::vector<Item> vec = readDataIntoVector(itemFilePath);
   std::fstream file;
   std::string line;
   for (size_t i{0}; i < vec.size(); i++) {

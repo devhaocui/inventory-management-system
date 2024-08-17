@@ -18,7 +18,7 @@ int main(int, char **) {
   // NOTE: INVENTORY MANAGEMENT SETUP
   invManage inv;
   inv.populate_stock(); // do not run this function if an item.csv file already exists!
-  std::vector<invManage::Item> item_csv = inv.readDataIntoVector("item.csv");
+  std::vector<invManage::Item> item_csv = inv.readDataIntoVector(inv.itemFilePath);
   std::cout << "item_csv size is -> " << item_csv.size() << "\n";
   glfwSetErrorCallback(glfw_error_callback);
   if (!glfwInit())
@@ -56,7 +56,7 @@ int main(int, char **) {
   ImGui_ImplGlfw_InitForOpenGL(window, true);
 
   ImGui_ImplOpenGL3_Init(glsl_version);
-  io.Fonts->AddFontFromFileTTF("../jetbrains.ttf", 20.0f);
+  io.Fonts->AddFontFromFileTTF(inv.font, 20.0f);
   const float TEXT_BASE_HEIGHT{20.0f};
   // const float TEXT_BASE_HEIGHT = ImGui::GetTextLineHeightWithSpacing();
 
@@ -327,7 +327,7 @@ int main(int, char **) {
     // NOTE: Display All Menu
     if (display_all_menu) {
       if (!data_loaded) {
-        item_csv = inv.readDataIntoVector("item.csv"); // update the added items
+        item_csv = inv.readDataIntoVector(inv.itemFilePath); // update the added items
         data_loaded = true;
       }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
@@ -371,7 +371,7 @@ int main(int, char **) {
     // NOTE: Display Category Menu
     if (display_category_menu) {
       if (!data_loaded) {
-        item_csv = inv.readDataIntoVector("item.csv");
+        item_csv = inv.readDataIntoVector(inv.itemFilePath);
         data_loaded = true;
       }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);
@@ -433,7 +433,7 @@ int main(int, char **) {
     }
     if (display_search_menu) {
       if (!data_loaded) {
-        item_csv = inv.readDataIntoVector("item.csv");
+        item_csv = inv.readDataIntoVector(inv.itemFilePath);
         data_loaded = true;
       }
       ImGui::SetNextWindowPos(window_position, ImGuiCond_Always);

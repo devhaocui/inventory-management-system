@@ -8,6 +8,10 @@
 class invManage {
 private:
 public:
+  // global variables to keep track of file locations
+  std::string itemFilePath = "data/item.csv";
+  std::string userFilePath = "data/user.csv";
+  const char* font = "jetbrains.ttf";
   std::string userName;
   std::string userPass;
 
