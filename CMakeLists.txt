@@ -8,7 +8,8 @@ set(CMAKE_CXX_STANDARD 20)
 set(MAIN_SOURCES
 main.cpp
 inventoryManagement.cpp
-inventoryManagement.h)
+inventoryManagement.h
+)
 
 # add bcrypt source files
 set(BCRYPT_DIR ${CMAKE_SOURCE_DIR}/lib/bcrypt)
@@ -35,9 +36,21 @@ set(SQLITE3_SOURCES
   ${SQLITE3_DIR}/sqlite3.c
 )
 
+# add sqlite3pp source files
+set(SQLITE3PP_DIR ${CMAKE_SOURCE_DIR}/lib/sqlite3pp/headeronly_src)
+set(SQLITE3PP_SOURCES
+# NOTE: why don't I need to include these for it to work?
+# maybe it's because they're wrappers which connects back to the sqlite3.h class
+#  ${SQLITE3PP_DIR}/sqlite3pp.h
+#  ${SQLITE3PP_DIR}/sqlite3pp.ipp
+#  ${SQLITE3PP_DIR}/sqlite3ppext.h
+#  ${SQLITE3PP_DIR}/sqlite3ppext.ipp
+)
+
 include_directories(${BCRYPT_DIR})
 include_directories(${IMGUI_DIR})
 include_directories(${SQLITE3_DIR})
+include_directories(${SQLITE3PP_DIR})
 
 add_executable(
   ${PROJECT_NAME}
@@ -45,6 +58,7 @@ add_executable(
   ${BCRYPT_SOURCES}
   ${IMGUI_SOURCES}
   ${SQLITE3_SOURCES}
+  ${SQLITE3PP_SOURCES}
 )
 
 find_package(OpenGL REQUIRED)

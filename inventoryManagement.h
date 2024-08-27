@@ -4,7 +4,6 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-
 class invManage {
 private:
 public:
@@ -41,6 +40,7 @@ public:
   std::vector<Item> readDataIntoVector(std::string);
   std::unordered_map<std::string, std::vector<Item>>
   readDataIntoMap(std::string fileName);
+  bool IsAnyKeyPressed();
 };
 
 #endif // !INVENTORYMANAGEMENT

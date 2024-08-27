@@ -18,5 +18,6 @@ if ! command_exists cmake; then
   eecho "cmake not found, installing..."
   brew install cmake
 fi
+
 # run the executable to start the IMS program
 ./build/inv

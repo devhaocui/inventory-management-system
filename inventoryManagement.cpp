@@ -4,21 +4,22 @@
 #include <iomanip>
 #include <iostream>
 #include <sqlite3.h>
+#include "imgui.h"
+#include "glfw3.h"
+#define GL_SILENCE_DEPRECATION
 
 // class invManage -> of struct Item -> of a constructor Item call
 //invManage::Item::Item(std::string name, std::string category, int quantity)
 //    : itemName(name), itemCategory(category), itemQuantity(quantity) {}
 
 // Equivalent method of the constructor above
-invManage::Item::Item(std::string name, std::string category, int quantity)
-{
+invManage::Item::Item(std::string name, std::string category, int quantity) {
   itemName = name;
   itemCategory = category;
   itemQuantity = quantity;
 }
 
-void invManage::populate_stock()
-{
+void invManage::populate_stock() {
   std::vector<Item> vec;
   for (size_t i{0}; i < 100000; i++) {
     vec.push_back(Item("beef" + std::to_string(i), "food", 10));
@@ -37,8 +38,7 @@ void invManage::populate_stock()
   file.close();
 }
 
-std::vector<std::string> invManage::readDataIntoVectorUser(std::string fileName)
-{
+std::vector<std::string> invManage::readDataIntoVectorUser(std::string fileName) {
   std::vector<std::string> vec;
   std::fstream file;
   std::string line;
@@ -49,26 +49,25 @@ std::vector<std::string> invManage::readDataIntoVectorUser(std::string fileName)
   return vec;
 }
 
-std::vector<invManage::Item> invManage::readDataIntoVector(std::string fileName)
-{
+std::vector<invManage::Item> invManage::readDataIntoVector(std::string fileName) {
   std::vector<invManage::Item> vec;
   std::fstream file;
   std::string line;
   file.open(fileName, std::ios::in);
   int element_count{0};
-  std::string element_one;
-  std::string element_two;
-  int element_three;
+  std::string e1;
+  std::string e2;
+  int e3;
   while (getline(file, line, ',')) {
     if (element_count == 0) {
-      element_one = line;
+      e1 = line;
       element_count++;
     } else if (element_count == 1) {
-      element_two = line;
+      e2 = line;
       element_count++;
     } else if (element_count == 2) {
-      element_three = std::stoi(line);
-      vec.push_back(Item(element_one, element_two, element_three));
+      e3 = std::stoi(line);
+      vec.push_back(Item(e1, e2, e3));
       element_count = 0;
     }
   }
@@ -147,8 +146,7 @@ bool invManage::userValidate(std::string userName, std::string userPass) {
   return false;
 }
 
-void invManage::addItem(std::string iName, std::string iCategory,
-                        int iQuantity) {
+void invManage::addItem(std::string iName, std::string iCategory, int iQuantity) {
   std::fstream file;
   std::vector<Item> vec = readDataIntoVector(itemFilePath);
   bool newItemAdded = false;
@@ -256,3 +254,16 @@ void invManage::searchItem(std::string iName) {
   if (!itemFound)
     std::cout << "Did not find (" << iName << ") in the inventory.\n";
 }
+
+bool invManage::IsAnyKeyPressed() {
+  ImGuiIO& io = ImGui::GetIO();
+  for (int key = GLFW_KEY_SPACE; key <= GLFW_KEY_LAST; ++key) {
+  // GLFW_KEY_LAST is the maximum key code value
+  // and SPACE is the first
+    if (io.KeysDown[key]) {
+      return true;  // Return true if any key is pressed
+    }
+  }
+  return false;  // No keys are pressed
+}
+

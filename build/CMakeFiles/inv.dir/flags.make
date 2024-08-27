@@ -5,7 +5,7 @@
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
+C_INCLUDES = -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -I/Users/haocui/invManSys/lib/sqlite3pp/headeronly_src -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
 
 C_FLAGSarm64 =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
 
@@ -13,7 +13,7 @@ C_FLAGS =  -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Plat
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
+CXX_INCLUDES = -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -I/Users/haocui/invManSys/lib/sqlite3pp/headeronly_src -isystem /opt/homebrew/include -iframework /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks
 
 CXX_FLAGSarm64 = -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
 

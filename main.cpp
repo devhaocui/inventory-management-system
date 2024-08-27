@@ -4,11 +4,12 @@
 #include "inventoryManagement.h"
 #include <cstdlib>
 #include <stdio.h>
-#define GL_SILENCE_DEPRECATION
-#include "GLFW/glfw3.h"
 #include <iostream>
 #include <string>
-
+#include "GLFW/glfw3.h"
+#define GL_SILENCE_DEPRECATION
+//#include "sqlite3.h"
+//#include "sqlite3pp.h"
 static void glfw_error_callback(int error, const char *description) {
   fprintf(stderr, "GLFW Error %d: %s\n", error, description);
 }
@@ -32,8 +33,7 @@ int main(int, char **) {
   glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Required on Mac
 
   // Create window with graphics context
-  GLFWwindow *window = glfwCreateWindow(700, 700, "Inventory Management System",
-                                        nullptr, nullptr);
+  GLFWwindow *window = glfwCreateWindow(700, 700, "Inventory Management System", nullptr, nullptr);
   if (window == nullptr)
     return 1;
   glfwMakeContextCurrent(window);
@@ -60,23 +60,22 @@ int main(int, char **) {
   const float TEXT_BASE_HEIGHT{20.0f};
   // const float TEXT_BASE_HEIGHT = ImGui::GetTextLineHeightWithSpacing();
 
-  // Our state
+  // Our states
   ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-
-  bool starting_window = true;
-  bool main_menu = false;
-  bool add_item_menu = false;
-  bool login_window = false;
-  bool register_window = false;
-  bool delete_item_menu = false;
-  bool withdraw_item_menu = false;
-  float duration{0.5f};
-  float display_text_timer{0.0f};
-  float display_text_bool = false;
-  bool display_all_menu = false;
-  bool display_category_menu = false;
-  bool display_search_menu = false;
-  bool data_loaded = false;
+  static bool starting_window = true;
+  static bool main_menu = false;
+  static bool add_item_menu = false;
+  static bool login_window = false;
+  static bool register_window = false;
+  static bool delete_item_menu = false;
+  static bool withdraw_item_menu = false;
+  static float duration{0.5f};
+  static float display_text_timer{0.0f};
+  static float display_text_bool = false;
+  static bool display_all_menu = false;
+  static bool display_category_menu = false;
+  static bool display_search_menu = false;
+  static bool data_loaded = false;
   ImGuiWindowFlags window_flags =
       ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize;
   ImVec2 window_size = ImVec2(700, 700);
@@ -219,8 +218,6 @@ int main(int, char **) {
       }
       if (ImGui::Button("(7) Log Out/Exit") || ImGui::IsKeyPressed(ImGuiKey_7)) {
         exit(1);
-//        starting_window = true;
-//        main_menu = false;
       }
       ImGui::End();
     }
@@ -369,8 +366,10 @@ int main(int, char **) {
     }
 
     // NOTE: Display Category Menu
-    if (display_category_menu) {
-      if (!data_loaded) {
+    if (display_category_menu)
+    {
+      if (!data_loaded)
+      {
         item_csv = inv.readDataIntoVector(inv.itemFilePath);
         data_loaded = true;
       }
@@ -390,30 +389,21 @@ int main(int, char **) {
       ImGui::TableHeadersRow();
       ImGuiListClipper clipper;
 
-      //NOTE: The code here lags when a category is found.
-      std::vector<invManage::Item> new_item_csv;
-      for (size_t i{0}; i < item_csv.size(); i++) {
-        if (item_csv[i].itemCategory == item_category)
-          new_item_csv.push_back(item_csv[i]);
+      // FIX: fixed by only running the function to check for relevant categories
+      // whenever a key is pressed. Can be even better by capturing the list of existing categories
+      // in a small category array.
+      static std::vector<invManage::Item> new_item_csv;
+      if (inv.IsAnyKeyPressed()) {
+        new_item_csv.clear();
+        for (size_t i{0}; i < item_csv.size(); i++) {
+          if (item_csv[i].itemCategory == item_category)
+            new_item_csv.push_back(item_csv[i]);
+        }
       }
+
       clipper.Begin(new_item_csv.size());
       while (clipper.Step()) {
         for (int row = clipper.DisplayStart; row < clipper.DisplayEnd; row++) {
-          // TODO: Need to create a separate vector<item> where it listens to
-          // the item_category and only push_back the value when the item
-          // matches the std::string. So probably need to add a button to allow
-          // users to confirm it. Or we can have it as it was previous of the
-          // code below that's commented out. Which allows real-time display but
-          // sacrifices performance.
-          //
-          // NOTE: We can add a method similar to how we did with
-          // display_all_menu() function. continually update item_category and
-          // listening to the user input updates. create a
-          // std::unordered_map<std::string category, std::vector<struct item> >
-          // that stores all items based on their category.
-          // do nothing if category does not exists on the map.
-          // If the category exists on the map, display all the values from that
-          // category.
           ImGui::TableNextRow();
           ImGui::TableNextColumn();
           ImGui::Text("(%d) %s", row + 1, new_item_csv[row].itemName.c_str());
