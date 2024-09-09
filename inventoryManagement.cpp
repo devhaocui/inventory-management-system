@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sqlite3.h>
+#include <random>
 #include "imgui.h"
 #include "glfw3.h"
 #define GL_SILENCE_DEPRECATION
@@ -21,10 +22,12 @@ invManage::Item::Item(std::string name, std::string category, int quantity) {
 
 void invManage::populate_stock() {
   std::vector<Item> vec;
+  std::random_device rd;
+  std::binomial_distribution<int> d(1000);
   for (size_t i{0}; i < 100000; i++) {
-    vec.push_back(Item("beef" + std::to_string(i), "food", 10));
-    vec.push_back(Item("iphone" + std::to_string(i), "electronic", 10));
-    vec.push_back(Item("couch" + std::to_string(i), "furniture", 10));
+    vec.push_back(Item("beef" + std::to_string(i), "food", d(rd)));
+    vec.push_back(Item("iphone" + std::to_string(i), "electronic", d(rd) ));
+    vec.push_back(Item("couch" + std::to_string(i), "furniture", d(rd) ));
   }
 
   std::fstream file;

@@ -10,9 +10,11 @@ The password hashing algorithm used is bcrypt. Below is a photo example of
 ``user name = myname`` and ``password = isjeff``
 ![username_demo](https://github.com/devhaocui/inventory-management-system/assets/172475135/d35e46ac-17c8-43bf-ad79-aec50acf2ac4)
 ### How to use the program
-Note: This program is currently designed for macOS users. It may or may not work for other Operating Systems. 
+run ``start.sh`` executable in the terminal. For example, ``sh start.sh``.
 #### Dependencies
-1. all dependencies are checked and installed in ``start.sh`` script. But some dependencies are Brew, GLFW, OpenGL, CMake.
+There are too many dependencies to keep track of, but start.sh attempts to keep track of all of them. I currently do not have a easy solution or know how to bundle up all the dependencies and file paths and make it all into a little neat MacOS App. If you know how please do let me know :).
+
+Some dependencies may include, GLFW, OpenGL3, XCode /w CLTs, CMake, etc...
 #### Usage
 1. download the repo using ``git clone https://github.com/devhaocui/inventory-management-system.git``
 2. run the ``start.sh`` executable in the terminal.
@@ -28,3 +30,4 @@ https://github.com/user-attachments/assets/b5cefc01-0616-421a-a80c-8d3886804765
 
 ### Known Issues
 - [x] Program currently crashes whenever an empty value is inserted (exception for login/register functions). Will fix this issue by adding try and catch methods later.
+- [x] the ``start.sh`` file does not work if simple dependencies such as Homebrew and XCode is not already installed.

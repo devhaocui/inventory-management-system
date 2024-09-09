@@ -19,5 +19,8 @@ if ! command_exists cmake; then
   brew install cmake
 fi
 
+echo "Attempting to install xcode CLT..."
+xcode-select --install
+
 # run the executable to start the IMS program
 ./build/inv

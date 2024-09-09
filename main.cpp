@@ -18,7 +18,7 @@ static void glfw_error_callback(int error, const char *description) {
 int main(int, char **) {
   // NOTE: INVENTORY MANAGEMENT SETUP
   invManage inv;
-  //inv.populate_stock(); // do not run this function if an item.csv file already exists!
+  inv.populate_stock(); // do not run this function if an item.csv file already exists!
   std::vector<invManage::Item> item_csv = inv.readDataIntoVector(inv.itemFilePath);
   std::cout << "item_csv size is -> " << item_csv.size() << "\n";
   glfwSetErrorCallback(glfw_error_callback);
@@ -113,10 +113,11 @@ int main(int, char **) {
       ImGui::Text("(%.1f FPS)",io.Framerate);
       static char user_name[128]{""};
       static char user_password[128]{""};
-      ImGui::Text("Time Elapsed: %i seconds",
-                  static_cast<int>(ImGui::GetTime()));
+      ImGui::Text("Time Elapsed: %i seconds", static_cast<int>(ImGui::GetTime()));
+      ImGui::PushItemWidth(200);
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
-      ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
+      ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password), ImGuiInputTextFlags_Password);
+      ImGui::PopItemWidth();
       if (ImGui::Button("Enter") || ImGui::IsKeyPressed(ImGuiKey_Enter)) {
         if (inv.userValidate(user_name, user_password)) {
           main_menu = true;
@@ -149,8 +150,10 @@ int main(int, char **) {
       ImGui::Text("(%.1f FPS)",io.Framerate);
       static char user_name[128]{""};
       static char user_password[128]{""};
+      ImGui::PushItemWidth(200);
       ImGui::InputText("username", user_name, IM_ARRAYSIZE(user_name));
       ImGui::InputText("password", user_password, IM_ARRAYSIZE(user_password));
+      ImGui::PopItemWidth();
       if (ImGui::Button("Enter") || ImGui::IsKeyPressed(ImGuiKey_Enter)) {
         inv.userName = user_name;
         inv.userPass = user_password;
@@ -232,11 +235,12 @@ int main(int, char **) {
       static char item_category[128]{""};
       static char item_quantity[128]{""};
       ImGui::Text("Add Item Menu");
+      ImGui::PushItemWidth(200);
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
-      ImGui::InputText("Item Category", item_category,
-                       IM_ARRAYSIZE(item_category));
+      ImGui::InputText("Item Category", item_category, IM_ARRAYSIZE(item_category));
       ImGui::InputText("Item Quantity", item_quantity,
                        IM_ARRAYSIZE(item_quantity));
+
       if (ImGui::Button("Add") || ImGui::IsKeyPressed(ImGuiKey_Enter)) {
         for (size_t i{0}; i < 128; i++) {
           item_name[i] = tolower(item_name[i]);
@@ -270,7 +274,9 @@ int main(int, char **) {
       ImGui::Begin("Delete Item Menu", &delete_item_menu, window_flags);
       ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
+      ImGui::PushItemWidth(200);
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
+      ImGui::PopItemWidth();
       if (ImGui::Button("Confirm Deletion") ||
           ImGui::IsKeyPressed(ImGuiKey_Enter)) {
         inv.deleteItem(item_name);
@@ -299,9 +305,10 @@ int main(int, char **) {
       ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
       static char item_quantity[128]{""};
+      ImGui::PushItemWidth(200);
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
-      ImGui::InputText("Item Quantity", item_quantity,
-                       IM_ARRAYSIZE(item_quantity));
+      ImGui::InputText("Item Quantity", item_quantity, IM_ARRAYSIZE(item_quantity));
+      ImGui::PopItemWidth();
       if (ImGui::Button("Confirm") || ImGui::IsKeyPressed(ImGuiKey_Enter)) {
         inv.withdrawItem(item_name, std::stoi(item_quantity));
         display_text_bool = true;
@@ -378,8 +385,9 @@ int main(int, char **) {
       ImGui::Begin("Display By Category Menu", &display_category_menu,window_flags);
       ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_category[128]{""};
-      ImGui::InputText("Category Name", item_category,
-                       IM_ARRAYSIZE(item_category));
+      ImGui::PushItemWidth(200);
+      ImGui::InputText("Category Name", item_category, IM_ARRAYSIZE(item_category));
+      ImGui::PopItemWidth();
       ImVec2 outer_size = ImVec2(0.0f, TEXT_BASE_HEIGHT * 25);
       ImGui::BeginTable("table2", 3,ImGuiTableFlags_Borders | ImGuiTableFlags_ScrollY, outer_size);
       ImGui::TableSetupScrollFreeze(0, 1); // Make top row always visible
@@ -431,10 +439,11 @@ int main(int, char **) {
       ImGui::Begin("Display By Item Name Menu", &display_search_menu, window_flags);
       ImGui::Text("(%.1f FPS)",io.Framerate);
       static char item_name[128]{""};
+      ImGui::PushItemWidth(200);
       ImGui::InputText("Item Name", item_name, IM_ARRAYSIZE(item_name));
-      for (int i{0}; i < 5; i++) {
+      ImGui::PopItemWidth();
+      for (int i{0}; i < 5; i++)
         ImGui::Text("");
-      }
       ImGui::BeginTable("table2", 3, ImGuiTableFlags_Borders);
       ImGui::TableSetupColumn("Item Name");
       ImGui::TableSetupColumn("Item Category");
@@ -442,7 +451,6 @@ int main(int, char **) {
       ImGui::TableHeadersRow();
       for (int i{0}; i < item_csv.size(); i++) {
         if (item_csv[i].itemName == item_name) {
-          ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
           ImGui::TableNextRow();
           ImGui::TableNextColumn();
           ImGui::Text("(%d) %s", i + 1, item_csv[i].itemName.c_str());
