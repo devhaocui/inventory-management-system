@@ -4,7 +4,7 @@
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 C_DEFINES = -D_GLFW_COCOA
 
-C_INCLUDES = -I/Users/haocui/invManSys/build/lib/glfw/src -I/Users/haocui/invManSys/lib/glfw/src -I/Users/haocui/invManSys/lib/bcrypt -I/Users/haocui/invManSys/lib/imgui -I/Users/haocui/invManSys/lib/sqlite3 -I/Users/haocui/invManSys/lib/sqlite3pp/headeronly_src -I/Users/haocui/invManSys/lib/glfw/include
+C_INCLUDES = -I/Users/haocui/invManSys/project/build/lib/glfw/src -I/Users/haocui/invManSys/project/lib/glfw/src -I/Users/haocui/invManSys/project/lib/bcrypt -I/Users/haocui/invManSys/project/lib/imgui -I/Users/haocui/invManSys/project/lib/sqlite3 -I/Users/haocui/invManSys/project/lib/sqlite3pp/headeronly_src -I/Users/haocui/invManSys/project/lib/glfw/include
 
 C_FLAGSarm64 = -std=c99 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=11.0 -fPIC -Wall
 

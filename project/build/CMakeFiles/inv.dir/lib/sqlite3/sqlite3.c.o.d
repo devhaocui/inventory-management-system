@@ -1,5 +1,5 @@
 CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o: \
-  /Users/haocui/invManSys/lib/sqlite3/sqlite3.c \
+  /Users/haocui/invManSys/project/lib/sqlite3/sqlite3.c \
   /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/stdarg.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/_stdio.h \

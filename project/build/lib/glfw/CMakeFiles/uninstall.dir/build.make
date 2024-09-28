@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/haocui/invManSys
+CMAKE_SOURCE_DIR = /Users/haocui/invManSys/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/haocui/invManSys/build
+CMAKE_BINARY_DIR = /Users/haocui/invManSys/project/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include lib/glfw/CMakeFiles/uninstall.dir/compiler_depend.make
 include lib/glfw/CMakeFiles/uninstall.dir/progress.make
 
 lib/glfw/CMakeFiles/uninstall:
-	cd /Users/haocui/invManSys/build/lib/glfw && /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -P /Users/haocui/invManSys/build/lib/glfw/cmake_uninstall.cmake
+	cd /Users/haocui/invManSys/project/build/lib/glfw && /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -P /Users/haocui/invManSys/project/build/lib/glfw/cmake_uninstall.cmake
 
 uninstall: lib/glfw/CMakeFiles/uninstall
 uninstall: lib/glfw/CMakeFiles/uninstall.dir/build.make
@@ -78,10 +78,10 @@ lib/glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : lib/glfw/CMakeFiles/uninstall.dir/build
 
 lib/glfw/CMakeFiles/uninstall.dir/clean:
-	cd /Users/haocui/invManSys/build/lib/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /Users/haocui/invManSys/project/build/lib/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : lib/glfw/CMakeFiles/uninstall.dir/clean
 
 lib/glfw/CMakeFiles/uninstall.dir/depend:
-	cd /Users/haocui/invManSys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/haocui/invManSys /Users/haocui/invManSys/lib/glfw /Users/haocui/invManSys/build /Users/haocui/invManSys/build/lib/glfw /Users/haocui/invManSys/build/lib/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/haocui/invManSys/project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/haocui/invManSys/project /Users/haocui/invManSys/project/lib/glfw /Users/haocui/invManSys/project/build /Users/haocui/invManSys/project/build/lib/glfw /Users/haocui/invManSys/project/build/lib/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : lib/glfw/CMakeFiles/uninstall.dir/depend
 

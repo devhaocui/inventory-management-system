@@ -1,7 +1,7 @@
 CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o: \
-  /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp \
-  /Users/haocui/invManSys/lib/imgui/imgui.h \
-  /Users/haocui/invManSys/lib/imgui/imconfig.h \
+  /Users/haocui/invManSys/project/lib/imgui/imgui_demo.cpp \
+  /Users/haocui/invManSys/project/lib/imgui/imgui.h \
+  /Users/haocui/invManSys/project/lib/imgui/imconfig.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__config_site \

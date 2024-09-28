@@ -1,7 +1,7 @@
 CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: \
-  /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp \
-  /Users/haocui/invManSys/lib/imgui/imgui.h \
-  /Users/haocui/invManSys/lib/imgui/imconfig.h \
+  /Users/haocui/invManSys/project/lib/imgui/imgui_draw.cpp \
+  /Users/haocui/invManSys/project/lib/imgui/imgui.h \
+  /Users/haocui/invManSys/project/lib/imgui/imconfig.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/float.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__config \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/__config_site \
@@ -88,7 +88,7 @@ CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/malloc/_ptrcheck.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/sys/_types/_dev_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/sys/_types/_mode_t.h \
-  /Users/haocui/invManSys/lib/imgui/imgui_internal.h \
+  /Users/haocui/invManSys/project/lib/imgui/imgui_internal.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/_stdio.h \
@@ -243,6 +243,6 @@ CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/arm/limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/arm/_limits.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/sys/syslimits.h \
-  /Users/haocui/invManSys/lib/imgui/imstb_textedit.h \
-  /Users/haocui/invManSys/lib/imgui/imstb_rectpack.h \
-  /Users/haocui/invManSys/lib/imgui/imstb_truetype.h
+  /Users/haocui/invManSys/project/lib/imgui/imstb_textedit.h \
+  /Users/haocui/invManSys/project/lib/imgui/imstb_rectpack.h \
+  /Users/haocui/invManSys/project/lib/imgui/imstb_truetype.h

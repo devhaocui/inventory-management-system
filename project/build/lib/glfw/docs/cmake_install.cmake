@@ -1,4 +1,4 @@
-# Install script for directory: /Users/haocui/invManSys/lib/glfw/docs
+# Install script for directory: /Users/haocui/invManSys/project/lib/glfw/docs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -16,15 +16,14 @@ The password hashing algorithm used is bcrypt. Below is a photo example of
 
 You can run ``inv.app`` completely independently without any files or libraries included in this GitHub. They're just there so you can see the source code.
 
-### Desired Outcomes
+### What the program does
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
 - [x] Create a user registration and login feature using basic hashing algorithm to validate each user.
 - [x] Implement the working codebase to display all the features inside of a GUI using ImGui with GLFW + OpenGL3.
-- [x] Keyboard shortcuts such as using 1~9 keyboard to navigate the menu, esc to go back, enter to confirm information.
+- [x] Keyboard shortcuts such as using 1~9 keyboard to navigate the menu, ESC to go back, ENTER to confirm information.
 - [ ] Modify the local storage .csv files into SQLite and integrate it into the database.
 
 https://github.com/user-attachments/assets/b5cefc01-0616-421a-a80c-8d3886804765
 
 ### Known Issues
 - [x] Program currently crashes whenever an empty value is inserted (exception for login/register functions). Will fix this issue by adding try and catch methods later.
-- [x] the ``start.sh`` file does not work if simple dependencies such as Homebrew and XCode is not already installed.

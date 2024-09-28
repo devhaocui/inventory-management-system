@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/haocui/invManSys
+CMAKE_SOURCE_DIR = /Users/haocui/invManSys/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/haocui/invManSys/build
+CMAKE_BINARY_DIR = /Users/haocui/invManSys/project/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/haocui/invManSys/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles /Users/haocui/invManSys/build/lib/glfw//CMakeFiles/progress.marks
-	cd /Users/haocui/invManSys/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
+	cd /Users/haocui/invManSys/project/build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles /Users/haocui/invManSys/project/build/lib/glfw//CMakeFiles/progress.marks
+	cd /Users/haocui/invManSys/project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/haocui/invManSys/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/clean
+	cd /Users/haocui/invManSys/project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,22 +148,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/haocui/invManSys/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/preinstall
+	cd /Users/haocui/invManSys/project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/haocui/invManSys/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/preinstall
+	cd /Users/haocui/invManSys/project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/haocui/invManSys/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/haocui/invManSys/project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 lib/glfw/CMakeFiles/uninstall.dir/rule:
-	cd /Users/haocui/invManSys/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/CMakeFiles/uninstall.dir/rule
+	cd /Users/haocui/invManSys/project/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/CMakeFiles/uninstall.dir/rule
 .PHONY : lib/glfw/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -172,7 +172,7 @@ uninstall: lib/glfw/CMakeFiles/uninstall.dir/rule
 
 # fast build rule for target.
 uninstall/fast:
-	cd /Users/haocui/invManSys/build && $(MAKE) $(MAKESILENT) -f lib/glfw/CMakeFiles/uninstall.dir/build.make lib/glfw/CMakeFiles/uninstall.dir/build
+	cd /Users/haocui/invManSys/project/build && $(MAKE) $(MAKESILENT) -f lib/glfw/CMakeFiles/uninstall.dir/build.make lib/glfw/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
 # Help Target
@@ -199,6 +199,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/haocui/invManSys/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/haocui/invManSys/project/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

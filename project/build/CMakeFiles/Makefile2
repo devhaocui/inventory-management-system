@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/haocui/invManSys
+CMAKE_SOURCE_DIR = /Users/haocui/invManSys/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/haocui/invManSys/build
+CMAKE_BINARY_DIR = /Users/haocui/invManSys/project/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -133,14 +133,14 @@ lib/glfw/src/clean: lib/glfw/src/CMakeFiles/update_mappings.dir/clean
 CMakeFiles/inv.dir/all: lib/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/inv.dir/build.make CMakeFiles/inv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target inv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35 "Built target inv"
 .PHONY : CMakeFiles/inv.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/inv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 35
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/inv.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 0
 .PHONY : CMakeFiles/inv.dir/rule
 
 # Convenience name for target.
@@ -159,14 +159,14 @@ CMakeFiles/inv.dir/clean:
 lib/glfw/CMakeFiles/uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/glfw/CMakeFiles/uninstall.dir/build.make lib/glfw/CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/glfw/CMakeFiles/uninstall.dir/build.make lib/glfw/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : lib/glfw/CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 lib/glfw/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 0
 .PHONY : lib/glfw/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -185,14 +185,14 @@ lib/glfw/CMakeFiles/uninstall.dir/clean:
 lib/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/glfw/src/CMakeFiles/glfw.dir/build.make lib/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/glfw/src/CMakeFiles/glfw.dir/build.make lib/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22 "Built target glfw"
 .PHONY : lib/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 lib/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 22
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 0
 .PHONY : lib/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -211,14 +211,14 @@ lib/glfw/src/CMakeFiles/glfw.dir/clean:
 lib/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/glfw/src/CMakeFiles/update_mappings.dir/build.make lib/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/glfw/src/CMakeFiles/update_mappings.dir/build.make lib/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=36 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=36 "Built target update_mappings"
 .PHONY : lib/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.
 lib/glfw/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 1
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/glfw/src/CMakeFiles/update_mappings.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/haocui/invManSys/project/build/CMakeFiles 0
 .PHONY : lib/glfw/src/CMakeFiles/update_mappings.dir/rule
 
 # Convenience name for target.

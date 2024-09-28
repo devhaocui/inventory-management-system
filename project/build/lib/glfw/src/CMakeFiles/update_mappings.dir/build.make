@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/haocui/invManSys
+CMAKE_SOURCE_DIR = /Users/haocui/invManSys/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/haocui/invManSys/build
+CMAKE_BINARY_DIR = /Users/haocui/invManSys/project/build
 
 # Utility rule file for update_mappings.
 
@@ -67,8 +67,8 @@ include lib/glfw/src/CMakeFiles/update_mappings.dir/compiler_depend.make
 include lib/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 lib/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /Users/haocui/invManSys/lib/glfw/src && /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -P /Users/haocui/invManSys/lib/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /Users/haocui/invManSys/project/lib/glfw/src && /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -P /Users/haocui/invManSys/project/lib/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: lib/glfw/src/CMakeFiles/update_mappings
 update_mappings: lib/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -79,10 +79,10 @@ lib/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : lib/glfw/src/CMakeFiles/update_mappings.dir/build
 
 lib/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /Users/haocui/invManSys/build/lib/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /Users/haocui/invManSys/project/build/lib/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : lib/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 lib/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /Users/haocui/invManSys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/haocui/invManSys /Users/haocui/invManSys/lib/glfw/src /Users/haocui/invManSys/build /Users/haocui/invManSys/build/lib/glfw/src /Users/haocui/invManSys/build/lib/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/haocui/invManSys/project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/haocui/invManSys/project /Users/haocui/invManSys/project/lib/glfw/src /Users/haocui/invManSys/project/build /Users/haocui/invManSys/project/build/lib/glfw/src /Users/haocui/invManSys/project/build/lib/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : lib/glfw/src/CMakeFiles/update_mappings.dir/depend
 

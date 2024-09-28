@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.30.2/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/haocui/invManSys
+CMAKE_SOURCE_DIR = /Users/haocui/invManSys/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/haocui/invManSys/build
+CMAKE_BINARY_DIR = /Users/haocui/invManSys/project/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/inv.dir/depend.make
@@ -70,172 +70,172 @@ include CMakeFiles/inv.dir/progress.make
 include CMakeFiles/inv.dir/flags.make
 
 CMakeFiles/inv.dir/main.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/main.cpp.o: /Users/haocui/invManSys/main.cpp
+CMakeFiles/inv.dir/main.cpp.o: /Users/haocui/invManSys/project/main.cpp
 CMakeFiles/inv.dir/main.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/inv.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/main.cpp.o -MF CMakeFiles/inv.dir/main.cpp.o.d -o CMakeFiles/inv.dir/main.cpp.o -c /Users/haocui/invManSys/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/inv.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/main.cpp.o -MF CMakeFiles/inv.dir/main.cpp.o.d -o CMakeFiles/inv.dir/main.cpp.o -c /Users/haocui/invManSys/project/main.cpp
 
 CMakeFiles/inv.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/main.cpp > CMakeFiles/inv.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/main.cpp > CMakeFiles/inv.dir/main.cpp.i
 
 CMakeFiles/inv.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/main.cpp -o CMakeFiles/inv.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/main.cpp -o CMakeFiles/inv.dir/main.cpp.s
 
 CMakeFiles/inv.dir/inventoryManagement.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/inventoryManagement.cpp.o: /Users/haocui/invManSys/inventoryManagement.cpp
+CMakeFiles/inv.dir/inventoryManagement.cpp.o: /Users/haocui/invManSys/project/inventoryManagement.cpp
 CMakeFiles/inv.dir/inventoryManagement.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/inv.dir/inventoryManagement.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/inventoryManagement.cpp.o -MF CMakeFiles/inv.dir/inventoryManagement.cpp.o.d -o CMakeFiles/inv.dir/inventoryManagement.cpp.o -c /Users/haocui/invManSys/inventoryManagement.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/inv.dir/inventoryManagement.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/inventoryManagement.cpp.o -MF CMakeFiles/inv.dir/inventoryManagement.cpp.o.d -o CMakeFiles/inv.dir/inventoryManagement.cpp.o -c /Users/haocui/invManSys/project/inventoryManagement.cpp
 
 CMakeFiles/inv.dir/inventoryManagement.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/inventoryManagement.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/inventoryManagement.cpp > CMakeFiles/inv.dir/inventoryManagement.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/inventoryManagement.cpp > CMakeFiles/inv.dir/inventoryManagement.cpp.i
 
 CMakeFiles/inv.dir/inventoryManagement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/inventoryManagement.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/inventoryManagement.cpp -o CMakeFiles/inv.dir/inventoryManagement.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/inventoryManagement.cpp -o CMakeFiles/inv.dir/inventoryManagement.cpp.s
 
 CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o: /Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp
+CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o: /Users/haocui/invManSys/project/lib/bcrypt/bcrypt.cpp
 CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o -MF CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o.d -o CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o -c /Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o -MF CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o.d -o CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.o -c /Users/haocui/invManSys/project/lib/bcrypt/bcrypt.cpp
 
 CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp > CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/bcrypt/bcrypt.cpp > CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.i
 
 CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/bcrypt/bcrypt.cpp -o CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/bcrypt/bcrypt.cpp -o CMakeFiles/inv.dir/lib/bcrypt/bcrypt.cpp.s
 
 CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o: /Users/haocui/invManSys/lib/bcrypt/blowfish.cpp
+CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o: /Users/haocui/invManSys/project/lib/bcrypt/blowfish.cpp
 CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o -MF CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o.d -o CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o -c /Users/haocui/invManSys/lib/bcrypt/blowfish.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o -MF CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o.d -o CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.o -c /Users/haocui/invManSys/project/lib/bcrypt/blowfish.cpp
 
 CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/bcrypt/blowfish.cpp > CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/bcrypt/blowfish.cpp > CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.i
 
 CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/bcrypt/blowfish.cpp -o CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/bcrypt/blowfish.cpp -o CMakeFiles/inv.dir/lib/bcrypt/blowfish.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui.cpp > CMakeFiles/inv.dir/lib/imgui/imgui.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui.cpp > CMakeFiles/inv.dir/lib/imgui/imgui.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui_demo.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui_demo.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui_demo.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui_demo.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui_demo.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_demo.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui_draw.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui_draw.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui_draw.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui_draw.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui_draw.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_draw.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui_tables.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui_tables.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_tables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui_tables.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui_tables.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui_tables.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui_tables.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui_tables.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_tables.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui_widgets.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui_widgets.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui_widgets.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui_widgets.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui_widgets.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_widgets.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui_impl_glfw.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui_impl_glfw.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui_impl_glfw.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui_impl_glfw.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui_impl_glfw.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_glfw.cpp.s
 
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o: /Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp
+CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o: /Users/haocui/invManSys/project/lib/imgui/imgui_impl_opengl3.cpp
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o -c /Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o -MF CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.o -c /Users/haocui/invManSys/project/lib/imgui/imgui_impl_opengl3.cpp
 
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/haocui/invManSys/project/lib/imgui/imgui_impl_opengl3.cpp > CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.i
 
 CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/lib/imgui/imgui_impl_opengl3.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/haocui/invManSys/project/lib/imgui/imgui_impl_opengl3.cpp -o CMakeFiles/inv.dir/lib/imgui/imgui_impl_opengl3.cpp.s
 
 CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o: CMakeFiles/inv.dir/flags.make
-CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o: /Users/haocui/invManSys/lib/sqlite3/sqlite3.c
+CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o: /Users/haocui/invManSys/project/lib/sqlite3/sqlite3.c
 CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o: CMakeFiles/inv.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o -MF CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o.d -o CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o -c /Users/haocui/invManSys/lib/sqlite3/sqlite3.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o -MF CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o.d -o CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.o -c /Users/haocui/invManSys/project/lib/sqlite3/sqlite3.c
 
 CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/haocui/invManSys/lib/sqlite3/sqlite3.c > CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/haocui/invManSys/project/lib/sqlite3/sqlite3.c > CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.i
 
 CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/haocui/invManSys/lib/sqlite3/sqlite3.c -o CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/haocui/invManSys/project/lib/sqlite3/sqlite3.c -o CMakeFiles/inv.dir/lib/sqlite3/sqlite3.c.s
 
 # Object files for target inv
 inv_OBJECTS = \
@@ -271,7 +271,7 @@ inv.app/Contents/MacOS/inv: CMakeFiles/inv.dir/build.make
 inv.app/Contents/MacOS/inv: lib/glfw/src/libglfw3.a
 inv.app/Contents/MacOS/inv: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/OpenGL.framework
 inv.app/Contents/MacOS/inv: CMakeFiles/inv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/haocui/invManSys/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable inv.app/Contents/MacOS/inv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/haocui/invManSys/project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable inv.app/Contents/MacOS/inv"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/inv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -283,6 +283,6 @@ CMakeFiles/inv.dir/clean:
 .PHONY : CMakeFiles/inv.dir/clean
 
 CMakeFiles/inv.dir/depend:
-	cd /Users/haocui/invManSys/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/haocui/invManSys /Users/haocui/invManSys /Users/haocui/invManSys/build /Users/haocui/invManSys/build /Users/haocui/invManSys/build/CMakeFiles/inv.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/haocui/invManSys/project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/haocui/invManSys/project /Users/haocui/invManSys/project /Users/haocui/invManSys/project/build /Users/haocui/invManSys/project/build /Users/haocui/invManSys/project/build/CMakeFiles/inv.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/inv.dir/depend
 

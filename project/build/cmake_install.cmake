@@ -1,4 +1,4 @@
-# Install script for directory: /Users/haocui/invManSys
+# Install script for directory: /Users/haocui/invManSys/project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/haocui/invManSys/build/lib/glfw/cmake_install.cmake")
+  include("/Users/haocui/invManSys/project/build/lib/glfw/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -57,6 +57,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/Users/haocui/invManSys/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/haocui/invManSys/project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
