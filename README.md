@@ -9,15 +9,12 @@ The password hashing algorithm used is bcrypt. Below is a photo example of
 
 ``user name = myname`` and ``password = isjeff``
 ![username_demo](https://github.com/devhaocui/inventory-management-system/assets/172475135/d35e46ac-17c8-43bf-ad79-aec50acf2ac4)
-### How to use the program
-run ``start.sh`` executable in the terminal. For example, ``sh start.sh``.
-#### Dependencies
-There are too many dependencies to keep track of, but start.sh attempts to keep track of all of them. I currently do not have a easy solution or know how to bundle up all the dependencies and file paths and make it all into a little neat MacOS App. If you know how please do let me know :).
+### How to use the Program
+1. I have made a simple easy to use MacOS bundle named ``inv.app`` included in the ``/invManSys`` directory.
+2. Pull it out to your ``/Desktop`` directory. Then run this command in the terminal ``xattr -d com.apple.quarantine ./Desktop/inv.app`` to grant access for the app to be opened. This is due to the app not officially published into the app store.
+3. Then just double click to open ``inv.app`` and you can play with it!
 
-Some dependencies may include, GLFW, OpenGL3, XCode /w CLTs, CMake, etc...
-#### Usage
-1. download the repo using ``git clone https://github.com/devhaocui/inventory-management-system.git``
-2. run the ``start.sh`` executable in the terminal.
+You can run ``inv.app`` completely independently without any files or libraries included in this GitHub. They're just there so you can see the source code.
 
 ### Desired Outcomes
 - [x] Create a working inventory management system with C++ that stores item data locally using a .csv file.
