@@ -11,7 +11,8 @@ The password hashing algorithm used is bcrypt. Below is a photo example of
 ![username_demo](https://github.com/devhaocui/inventory-management-system/assets/172475135/d35e46ac-17c8-43bf-ad79-aec50acf2ac4)
 ### How to use the Program
 1. I have made a simple easy to use MacOS bundle named ``inv.app`` included in the ``/invManSys`` directory.
-2. Pull it out to your ``/Desktop`` directory. Then run this command in the terminal ``xattr -d com.apple.quarantine ./Desktop/inv.app`` to grant access for the app to be opened. This is due to the app not officially published into the app store.
+2. Pull it out to your ``/Desktop`` directory. Then run this command in the terminal
+ ``xattr -d com.apple.quarantine ./Desktop/inv.app`` to grant access for the app to be opened. This is due to the app not officially published into the app store.
 3. Then just double click to open ``inv.app`` and you can play with it!
 
 You can run ``inv.app`` completely independently without any files or libraries included in this GitHub. They're just there so you can see the source code.
